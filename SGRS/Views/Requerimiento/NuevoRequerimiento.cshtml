@@ -8,7 +8,7 @@
         <div class="page-title-box">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Proyecto</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Requerimiento</a></li>
                 <li class="breadcrumb-item active">Nuevo</li>
             </ol>
         </div>
@@ -21,7 +21,7 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="card-title">Nuevo Registro</h4>
+                <h4 class="card-title">Nuevo Requerimiento</h4>
 
                 <button class="btn btn-danger mb-3" id="btnRegresar">Regresar</button>
 
@@ -123,6 +123,17 @@
                     </div>
                 </div>
 
+                <div class="form-group">
+                    <div class="col-md-6 offset-md-2">
+                        <div class="form-group">
+                            <input type="file" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Cargar Archivo" data-iconName="fas fa-folder-open">
+                        </div>
+                    </div>
+
+                </div>
+
+
+
                 <button class="btn btn-primary" id="btnGuardar">Guardar</button>
 
 
@@ -132,12 +143,13 @@
     <!-- end col -->
 </div>
 
+<script src="~/plugins/bootstrap-filestyle/js/bootstrap-filestyle.js"></script>
 
 <script>
 
     $('#btnRegresar').click(function () {
 
-        $.post('/Proyecto/ListaProyecto', null, function (response) {
+        $.post('/Requerimiento/ListaRequerimiento', null, function (response) {
 
             $("#divLayoutBody").html(response);
         });
@@ -154,6 +166,11 @@
 
         $('#txtPlazoFin').datepicker(options);
         $('#txtPlazoInicio').datepicker(options);
+
+        debugger 
+        //$(":file").filestyle({
+        //    'text': 'Cargar Archivo'
+        //});
     })
 
 
