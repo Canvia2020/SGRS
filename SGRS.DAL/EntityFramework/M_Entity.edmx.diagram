@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="759da956923f438db537a32166c2b99f" Name="Diagram1" ZoomLevel="81">
+        <EntityTypeShape EntityType="SGRS_Model.PARAMETRO" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.UBIGEO" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.ACCION" Width="1.5" PointX="8.25" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.ASIGNACION" Width="1.5" PointX="8.25" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.EMPRESA" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.LOG" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.MODULO" Width="1.5" PointX="3" PointY="8.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.OPCION" Width="1.5" PointX="5.25" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.PERFIL" Width="1.5" PointX="3" PointY="13.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.PERMISOS" Width="1.5" PointX="10.5" PointY="11" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.SISTEMA" Width="1.5" PointX="0.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="SGRS_Model.USUARIOS" Width="1.5" PointX="6" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="SGRS_Model.FK__PERMISOS__CODIGO__73852659" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__ASIGNACIO__CODIG__5FB337D6" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__ASIGNACIO__CODIG__60A75C0F" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__ASIGNACIO__CODIG__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__MODULO__CODIGO_S__662B2B3B" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__OPCION__CODIGO_M__690797E6" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__PERMISOS__CODIGO__74794A92" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__PERFIL__CODIGO_S__656C112C" ManuallyRouted="false" />
+        <AssociationConnector Association="SGRS_Model.FK__PERMISOS__CODIGO__66603565" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

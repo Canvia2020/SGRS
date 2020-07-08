@@ -1,0 +1,171 @@
+﻿
+
+
+
+<link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Requerimiento</a></li>
+                <li class="breadcrumb-item active">Lista de Requerimientos</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Lista de Requerimientos</h4>
+                <p class="card-title-desc">
+                    <button class="btn btn-primary" id="btnNuevoRequerimiento">Nuevo</button>
+                </p>
+
+
+                @*<table id="datatable" class="table table-bordered dt-responsive">*@
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Programa</th>
+                            <th>Componente</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">01</td>
+                            <td>RELACIONES COMUNITARIAS</td>
+                            <td>EDUCACIÓN</td>
+                            <td>Contribuir con la mejora de la educación básica, que ayuden a elevar los rendimientos educativos de niños, niñas y adolescentes.</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="sorting_1 dtr-control">02</td>
+                            <td>SINERGIAS</td>
+                            <td>London</td>
+                            <td>47</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">03</td>
+                            <td>RELACIONES COMUNITARIAS</td>
+                            <td>SALUD</td>
+                            <td>Contribuir con las acciones de prevención, promoción y atención de salud, y de entornos saludables.</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="sorting_1 dtr-control">04</td>
+                            <td>SOLIDARIDAD SOCIAL</td>
+                            <td>London</td>
+                            <td>41</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">05</td>
+                            <td>SOLIDARIDAD SOCIAL</td>
+                            <td>CAMPAÑA POR NAVIDAD</td>
+                            <td>Fortalecer las relaciones de armonía con las comunidades campesinas de las áreas de influencia de ELECTROPERU</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">06</td>
+                            <td>COMUNICACIÓN INTERNA</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">07</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+
+<!-- Prueba -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+
+        //$("#datatable").DataTable({
+        //    "columnDefs": [
+        //        { "width": "50%", "targets": 3 }
+        //    ],
+        //    "language": {
+        //        "paginate": {
+        //            "previous": "anterior",
+        //            "next": "posterior"
+        //        },
+        //        "search": "Buscar:",
+
+
+        //    },
+        //    "search": "Buscar:",
+        //    "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+
+        //});
+
+        $('#btnRequerimientoComponente').click(function () {
+
+            $.post('/Requerimiento/NuevoRequerimiento', { estado: '0' }, function (response) {
+
+                $("#divLayoutBody").html(response);
+            });
+        });
+
+    });
+
+
+
+</script>
+

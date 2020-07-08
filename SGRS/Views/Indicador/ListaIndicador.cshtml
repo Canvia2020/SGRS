@@ -1,0 +1,178 @@
+﻿
+
+
+
+
+<link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Indicador</a></li>
+                <li class="breadcrumb-item active">Lista de Indicadores</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Lista de Indicadores</h4>
+                <p class="card-title-desc">
+                    <button class="btn btn-primary" id="btnNuevoIndicador">Nuevo</button>
+                </p>
+
+                <table id="datatable" class="table table-bordered dt-responsive">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Proyecto</th>
+                            <th>Nombre Indicador</th>
+                            <th>Tipo de Indicador</th> 
+                            <th>Estado</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">01</td>
+                            <td>Promoción de actividades sobre cuidado del medio ambiente.</td>
+                            <td>xxxxxx </td>
+                            <td>Por Valor</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="sorting_1 dtr-control">02</td>
+                            <td>Fortalecimiento de Identidad Corporativa.</td>
+                            <td>xxxxxx </td>
+                            <td>Por Valor</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">03</td>
+                            <td>Promoción de la Educación en temas relacionados a la energía y cuidado del agua.</td>
+                            <td>xxxxxx </td>
+                            <td>Por Presupuesto</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="sorting_1 dtr-control">04</td>
+                            <td>Realización de campañas de salud en coordinación con los establecimientos de salud.</td>
+                            <td>xxxxxx </td>
+                            <td>Por Presupuesto</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">05</td>
+                            <td>Adquisición de material educativo y taller para promover oportunidades.</td>
+                            <td>xxxxxx </td>
+                            <td>Por Presupuesto</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">06</td>
+                            <td>COMUNICACIÓN INTERNA</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">07</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+                            <td>ACTIVO</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-secondary"><i class="fas fa-search-plus"></i> </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+
+<!-- Prueba -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+
+        $("#datatable").DataTable({
+            "columnDefs": [
+                { "width": "50%", "targets": 1 }
+            ],
+            "language": {
+                "paginate": {
+                    "previous": "anterior",
+                    "next": "posterior"
+                },
+                "search": "Buscar:",
+
+
+            },
+            "search": "Buscar:",
+            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+
+        });
+
+        $('#btnNuevoIndicador').click(function () {
+
+            $.post('/Indicador/NuevoIndicador', { estado: '0' }, function (response) {
+
+                $("#divLayoutBody").html(response);
+            });
+        });
+
+    });
+
+
+
+</script>
+

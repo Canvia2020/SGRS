@@ -1,0 +1,262 @@
+﻿
+
+<h2>Parametros</h2>
+<style>
+    .blanco, .content-grid-gmd {
+        background-color: white;
+    }
+  
+</style>
+
+<!-- pagina Index controller :configuracion -->
+<div class="row blanco">
+    <div class="col-md-12">
+        <div class="form-group col-md-12 pad-pan-ef-1 pad-bot-0px">
+            <div class="panel panel-default mar-bot-0px">
+                <div class="panel-heading pad-pan-ef-3">
+                    <h5>
+                        @*<span id="titulo-opcion" class="titulo-opcion">Parametros</span>*@
+                        <button type="button" class="btn btn-danger btn-danger-bot" id="btnAgregar">
+                            <span class="glyphicon glyphicon-plus"></span>
+                            Nuevo
+                        </button>
+                    </h5>
+                </div>
+                <div class="panel-body">
+                    <div class="row" id="ElementoParametro">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-pan-ef-1">
+                            <label class="lbl-fe-1">Parametro: <span class="text-danger">@ViewBag.NombreParametro</span> </label>
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-pan-ef-1">
+                            <hr class="hr-1" />
+                        </div>
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-pan-ef-1">
+                            <input type="hidden" id="hdNivel" value="@ViewBag.NombreNivel" />
+                            <input type="hidden" id="hdCodigoParametro" value="@ViewBag.CodigoParametro" />
+
+                            <input type="hidden" id="DBIdCodigoPadre" value="@ViewBag.DBIdCodigoPadre" />
+                            <input type="hidden" id="DBIdCodigoParametro" value="@ViewBag.DBIdCodigoParametro" />
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2 pad-pan-ef-1">
+                            <label for="txtNombre" class="lbl-fe-1">Nombre</label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control txt-fe-1" id="txtNombre" placeholder="Nombre" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2 pad-pan-ef-1">
+                            <label for="txtNombreCorto" class="lbl-fe-1">Nombre Corto</label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control txt-fe-1" id="txtNombreCorto" placeholder="Nombre Corto" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-6 col-md-2 col-lg-2 pad-pan-ef-1">
+                            <label for="txtDescripcion" class="lbl-fe-1">Descripción</label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </span>
+                                </div>
+                                <input type="text" class="form-control txt-fe-1" id="txtDescripcion" placeholder="Descripción" />
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3 col-md-2 col-lg-2 pad-pan-ef-1">
+                            <label for="ddlEstado" class="lbl-fe-1">Estado</label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-cursor-default"></i>
+                                    </span>
+                                </div>
+                                @Html.DropDownList("ddlEstado", new SelectList(ViewBag.lstEstados, "Valor", "Nombre"), new { id = "ddlEstado", @class = "form-control sel-fe-1" })
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-9 col-md-4 col-lg-4 pad-pan-ef-1 text-right">
+                            <label class="lbl-fe-1">&nbsp;</label>
+                            <div>
+                                <button type="button" class="btn btn-primary" id="btnBuscar"><span class="glyphicon glyphicon-search"></span> Buscar</button>&nbsp;
+                                <button type="button" class="btn btn-primary" id="btnLimpiar"><span class="glyphicon glyphicon-erase"></span> Limpiar</button>&nbsp;
+                                <button type="button" class="btn btn-primary" id="btnRetroceder"><span class="glyphicon glyphicon-arrow-left"></span> Retroceder</button>&nbsp;
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row blanco">
+    <div class="col-md-12">
+        <div class="box-body pad-pan-ef-1">
+            <div class="form-group paddingHorizClear">
+                <div id="contenedorggmParametro" class="content-grid-gmd">
+
+                    @Html.Action("Paginacion", "Configuracion", new
+                    {
+                        arg = Newtonsoft.Json.JsonConvert.SerializeObject(new
+                        {
+                            CurrentPageIndex = SGRS.Helper.Constantes.DatosConstantes.Controles.Paginacion.FilasPorPagina.PaginaDefecto,
+                            RowsPerPage = System.Configuration.ConfigurationManager.AppSettings["RegistrosPorPaginaGrilla"].ToString(),
+                            DirectionOrder = SGRS.Helper.Constantes.DatosConstantes.Controles.Paginacion.Orientacion.Ascendente,
+                            OrderBy = "_Nombre"
+                        })
+                    })
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<script type="text/javascript">
+ 
+
+        var codigoParametro = '@ViewBag.codigoParametro';
+
+        if(codigoParametro == 0){
+            $("#ElementoParametro").css("display", "none");
+            $("#btnRetroceder").css("display", "none");
+        }
+        else{
+            $("#ElementoParametro").css("display", "block");
+            $("#btnRetroceder").css("display", "inline-block");
+        }
+
+
+        $(document).ready(function ()
+        {
+
+
+            $('#btnRetroceder').click(function (){
+                $("#divLayoutBody").load(
+                     "/Configuracion/Index/",
+                    {
+                        controlador: "Configuracion",
+                        accion: "Index",
+                        DBIdCodigoPadre: $('#DBIdCodigoPadre').val(),
+                        callBackMethod: "refrescarggmParametro"
+                    }
+                )
+            });
+            $('#btnAgregar').click(function () {
+                debugger;
+                $("#divLayoutBody").load(
+                    "/Configuracion/Mantenimiento/",
+                    {
+                        controlador: "Configuracion",
+                        accion: "Mantenimiento",
+                        estado:"0",
+                        codigoParametro: $('#hdCodigoParametro').val(),
+                        DBIdCodigoParametro: $('#DBIdCodigoParametro').val(),
+                        DBIdCodigoPadre: $('#DBIdCodigoPadre').val(),
+                        callBackMethod: "refrescarggmParametro"
+                    }
+                )
+            });
+
+
+
+
+            refrescarggmParametro();
+            $("#btnBuscar").click(function ()
+            {
+                refrescarggmParametro()
+            });
+            $("#btnLimpiar").click(function ()
+            {
+                $('#txtNombre').val("");
+                $('#txtNombreCorto').val("");
+                $('#txtDescripcion').val("");
+                $('#ddlEstado').val("");
+                refrescarggmParametro()
+            });
+            /* Key */
+            KeyPressRefPar("#txtNombre");
+            KeyPressRefPar("#txtNombreCorto");
+            KeyPressRefPar("#txtDescripcion");
+            SelChaRefCar("#ddlEstado");
+
+
+        });
+
+        function KeyPressRefPar(valor) {
+            $(valor).keyup(function (e) {
+                if (e.which == 13) {
+                    refrescarggmParametro()
+                }
+            });
+        }
+        function SelChaRefCar(valor) {
+            $(valor).change(function (e) {
+                refrescarggmParametro()
+            });
+        }
+        function refrescarggmParametro() {
+
+            var nombre = $('#txtNombre').val();
+            var nombreCorto = $('#txtNombreCorto').val();
+            var descripcion = $('#txtDescripcion').val();
+            var estado = $('#ddlEstado').val();
+            var codigoPadre = codigoParametro;
+
+            $("#ggmParametro").AddFilter('_CodigoPadre', codigoPadre);
+            $("#ggmParametro").AddFilter('_Nombre', nombre);
+            $("#ggmParametro").AddFilter('_NombreCorto', nombreCorto);
+            $("#ggmParametro").AddFilter('_Descripcion', descripcion);
+            $("#ggmParametro").AddFilter('_EstadoDescripcion', estado);
+
+            var data = $("#ggmParametro").GMDDeserialice();
+
+
+            $("#contenedorggmParametro").load("/Configuracion/Paginacion/", { arg: JSON.stringify(data) });
+        };
+
+
+            function CargarPrmisoBotones() {
+                console.log('CargarPrmisoBotones');
+                var acciones = '@ViewBag.Acciones';
+                var arAcciones = acciones.split('|');
+                $(".SGSEDP").each(function() {
+                    var idBoton = $(this)[0].id;
+                    for (var i = 0; i < arAcciones.length; i++) {
+                        var accion = arAcciones[i];
+                        if (idBoton.indexOf(accion) != -1) {
+                            $("#" + $(this)[0].id).css({
+                                'pointer-events': 'auto',
+                                'opacity': '1'
+                            });
+
+                            break;
+                        } else {
+                            $("#" + $(this)[0].id).css({
+                                'pointer-events': 'none',
+                                'opacity': '0.4'
+                            });
+                        }
+                    }
+                });
+            };
+
+</script>
+
+
+
+
+
+
+

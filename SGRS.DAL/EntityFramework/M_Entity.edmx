@@ -1,0 +1,1066 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SGRS_Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="PARAMETRO">
+          <Key>
+            <PropertyRef Name="CODIGO_PARAMETRO" />
+          </Key>
+          <Property Name="CODIGO_PARAMETRO" Type="int" Nullable="false" />
+          <Property Name="CODIGO_PADRE" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="200" Nullable="false" />
+          <Property Name="NOMBRE_CORTO" Type="varchar" MaxLength="200" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="200" />
+          <Property Name="VALOR" Type="varchar" MaxLength="50" />
+          <Property Name="VALOR_FECHA" Type="datetime" />
+          <Property Name="ORDEN" Type="int" />
+          <Property Name="NIVEL" Type="int" />
+          <Property Name="DESCRIPCION_NOTIFICACION" Type="nvarchar(max)" />
+          <Property Name="TIPO_PARAMETRO" Type="smallint" />
+          <Property Name="ESTADO_REGISTRO" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+          <Property Name="CODIGO_SISTEMA" Type="int" />
+          <Property Name="CODIGO_SISTEMA_PADRE" Type="int" />
+        </EntityType>
+        <EntityType Name="UBIGEO">
+          <Key>
+            <PropertyRef Name="CODIGO_UBIGEO" />
+          </Key>
+          <Property Name="CODIGO_UBIGEO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="UBIGEO" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DEPARTAMENTO" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="PROVINCIA" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="DISTRITO" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACCION">
+          <Key>
+            <PropertyRef Name="CODIGO_ACCION" />
+          </Key>
+          <Property Name="CODIGO_ACCION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="BOTON" Type="varchar" MaxLength="15" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="ASIGNACION">
+          <Key>
+            <PropertyRef Name="CODIGO_ASIGNACION" />
+          </Key>
+          <Property Name="CODIGO_ASIGNACION" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_SISTEMA" Type="int" Nullable="false" />
+          <Property Name="CODIGO_USUARIO" Type="int" Nullable="false" />
+          <Property Name="CODIGO_PERFIL" Type="int" Nullable="false" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="CODIGO_EMPRESA" />
+          </Key>
+          <Property Name="CODIGO_EMPRESA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="RAZON_SOCIAL" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="ALIAS" Type="varchar" MaxLength="255" />
+          <Property Name="RUC" Type="varchar" MaxLength="11" Nullable="false" />
+          <Property Name="DIRECCION" Type="varchar" MaxLength="252" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="20" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="20" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="LOG">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="LogLevelId" Type="int" Nullable="false" />
+          <Property Name="ShortMessage" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="FullMessage" Type="nvarchar(max)" />
+          <Property Name="IpAddress" Type="nvarchar" MaxLength="200" />
+          <Property Name="CustomerId" Type="int" />
+          <Property Name="PageUrl" Type="nvarchar(max)" />
+          <Property Name="ReferrerUrl" Type="nvarchar(max)" />
+          <Property Name="CreatedOnUtc" Type="datetime2" Precision="7" Nullable="false" />
+        </EntityType>
+        <EntityType Name="MODULO">
+          <Key>
+            <PropertyRef Name="CODIGO_MODULO" />
+          </Key>
+          <Property Name="CODIGO_MODULO" Type="int" Nullable="false" />
+          <Property Name="CODIGO_SISTEMA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
+          <Property Name="MODULO_PADRE" Type="int" />
+          <Property Name="GLYPHICON" Type="varchar" MaxLength="100" />
+          <Property Name="RUTA_IMAGEN" Type="varchar" MaxLength="250" />
+          <Property Name="CONTROLADOR" Type="varchar" MaxLength="250" />
+          <Property Name="METODO" Type="varchar" MaxLength="250" />
+          <Property Name="AREA" Type="varchar" MaxLength="250" />
+          <Property Name="ORDEN" Type="int" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="OPCION">
+          <Key>
+            <PropertyRef Name="CODIGO_OPCION" />
+          </Key>
+          <Property Name="CODIGO_OPCION" Type="int" Nullable="false" />
+          <Property Name="CODIGO_MODULO" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
+          <Property Name="GLYPHICON" Type="varchar" MaxLength="100" />
+          <Property Name="CONTROLADOR" Type="varchar" MaxLength="250" />
+          <Property Name="METODO" Type="varchar" MaxLength="250" />
+          <Property Name="AREA" Type="varchar" MaxLength="250" />
+          <Property Name="ORDEN" Type="int" />
+          <Property Name="ESTADO" Type="bit" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="PERFIL">
+          <Key>
+            <PropertyRef Name="CODIGO_PERFIL" />
+          </Key>
+          <Property Name="CODIGO_PERFIL" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_SISTEMA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="PERMISOS">
+          <Key>
+            <PropertyRef Name="CODIGO_PERMISOS" />
+          </Key>
+          <Property Name="CODIGO_PERMISOS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_PERFIL" Type="int" Nullable="false" />
+          <Property Name="CODIGO_ACCION" Type="int" Nullable="false" />
+          <Property Name="CODIGO_OPCION" Type="int" Nullable="false" />
+          <Property Name="ESTADO_PERMISO" Type="bit" Nullable="false" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="SISTEMA">
+          <Key>
+            <PropertyRef Name="CODIGO_SISTEMA" />
+          </Key>
+          <Property Name="CODIGO_SISTEMA" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CODIGO_EMPRESA" Type="int" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="varchar" MaxLength="250" />
+          <Property Name="RUTA" Type="varchar" MaxLength="250" />
+          <Property Name="TOKEN" Type="varchar" MaxLength="32" Nullable="false" />
+          <Property Name="PARAMETRO" Type="int" />
+          <Property Name="VALOR_PARAMETRO" Type="int" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="CODIGO_USUARIO" />
+          </Key>
+          <Property Name="CODIGO_USUARIO" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="NOMBRE" Type="varchar" MaxLength="250" Nullable="false" />
+          <Property Name="APELLIDO" Type="varchar" MaxLength="250" />
+          <Property Name="EMAIL" Type="varchar" MaxLength="250" />
+          <Property Name="CODIGO_TIPO_DOCUMENTO_IDENTIDAD" Type="int" />
+          <Property Name="NUM_DOCUMENTO_IDENTIDAD" Type="varchar" MaxLength="20" />
+          <Property Name="FOTO" Type="image" />
+          <Property Name="USUARIO" Type="varchar" MaxLength="200" />
+          <Property Name="CONTRASENA" Type="varchar" MaxLength="800" />
+          <Property Name="DOMINIO_RED" Type="varchar" MaxLength="250" />
+          <Property Name="CODIGO_PERSONA" Type="varchar" MaxLength="8" />
+          <Property Name="CODIGO_CARGO" Type="int" />
+          <Property Name="ACTIVE_DIRECTORY" Type="bit" />
+          <Property Name="CODIGO_EMPRESA" Type="int" />
+          <Property Name="INDICADOR_INT_EXT_PNAT" Type="int" Nullable="false" />
+          <Property Name="CELULAR" Type="varchar" MaxLength="20" />
+          <Property Name="ESTADO" Type="bit" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="datetime" Nullable="false" />
+          <Property Name="TERMINAL_CREACION" Type="varchar" MaxLength="40" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="varchar" MaxLength="30" />
+          <Property Name="FECHA_MODIFICACION" Type="datetime" />
+          <Property Name="TERMINAL_MODIFICACION" Type="varchar" MaxLength="40" />
+          <Property Name="TELEFONO" Type="varchar" MaxLength="35" />
+          <Property Name="ULTIMO_DIGITO" Type="char" MaxLength="1" />
+          <Property Name="FECHA_EMISION" Type="varchar" MaxLength="35" />
+        </EntityType>
+        <Association Name="FK__ASIGNACIO__CODIG__5FB337D6">
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="1" />
+          <End Role="ASIGNACION" Type="Self.ASIGNACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SISTEMA">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Principal>
+            <Dependent Role="ASIGNACION">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ASIGNACIO__CODIG__60A75C0F">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="ASIGNACION" Type="Self.ASIGNACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="CODIGO_USUARIO" />
+            </Principal>
+            <Dependent Role="ASIGNACION">
+              <PropertyRef Name="CODIGO_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ASIGNACIO__CODIG__619B8048">
+          <End Role="PERFIL" Type="Self.PERFIL" Multiplicity="1" />
+          <End Role="ASIGNACION" Type="Self.ASIGNACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERFIL">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Principal>
+            <Dependent Role="ASIGNACION">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MODULO__CODIGO_S__662B2B3B">
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="1" />
+          <End Role="MODULO" Type="Self.MODULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SISTEMA">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Principal>
+            <Dependent Role="MODULO">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPCION__CODIGO_M__690797E6">
+          <End Role="MODULO" Type="Self.MODULO" Multiplicity="1" />
+          <End Role="OPCION" Type="Self.OPCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MODULO">
+              <PropertyRef Name="CODIGO_MODULO" />
+            </Principal>
+            <Dependent Role="OPCION">
+              <PropertyRef Name="CODIGO_MODULO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERFIL__CODIGO_S__656C112C">
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="1" />
+          <End Role="PERFIL" Type="Self.PERFIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SISTEMA">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Principal>
+            <Dependent Role="PERFIL">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERMISOS__CODIGO__66603565">
+          <End Role="PERFIL" Type="Self.PERFIL" Multiplicity="1" />
+          <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERFIL">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Principal>
+            <Dependent Role="PERMISOS">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERMISOS__CODIGO__73852659">
+          <End Role="ACCION" Type="Self.ACCION" Multiplicity="1" />
+          <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCION">
+              <PropertyRef Name="CODIGO_ACCION" />
+            </Principal>
+            <Dependent Role="PERMISOS">
+              <PropertyRef Name="CODIGO_ACCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERMISOS__CODIGO__74794A92">
+          <End Role="OPCION" Type="Self.OPCION" Multiplicity="1" />
+          <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPCION">
+              <PropertyRef Name="CODIGO_OPCION" />
+            </Principal>
+            <Dependent Role="PERMISOS">
+              <PropertyRef Name="CODIGO_OPCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SGRS_ModelStoreContainer">
+          <EntitySet Name="PARAMETRO" EntityType="Self.PARAMETRO" Schema="MAN" store:Type="Tables" />
+          <EntitySet Name="UBIGEO" EntityType="Self.UBIGEO" Schema="MAN" store:Type="Tables" />
+          <EntitySet Name="ACCION" EntityType="Self.ACCION" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="ASIGNACION" EntityType="Self.ASIGNACION" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="LOG" EntityType="Self.LOG" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="MODULO" EntityType="Self.MODULO" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="OPCION" EntityType="Self.OPCION" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="PERFIL" EntityType="Self.PERFIL" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="PERMISOS" EntityType="Self.PERMISOS" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="SISTEMA" EntityType="Self.SISTEMA" Schema="SEG" store:Type="Tables" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" Schema="SEG" store:Type="Tables" />
+          <AssociationSet Name="FK__ASIGNACIO__CODIG__5FB337D6" Association="Self.FK__ASIGNACIO__CODIG__5FB337D6">
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+            <End Role="ASIGNACION" EntitySet="ASIGNACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ASIGNACIO__CODIG__60A75C0F" Association="Self.FK__ASIGNACIO__CODIG__60A75C0F">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="ASIGNACION" EntitySet="ASIGNACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ASIGNACIO__CODIG__619B8048" Association="Self.FK__ASIGNACIO__CODIG__619B8048">
+            <End Role="PERFIL" EntitySet="PERFIL" />
+            <End Role="ASIGNACION" EntitySet="ASIGNACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MODULO__CODIGO_S__662B2B3B" Association="Self.FK__MODULO__CODIGO_S__662B2B3B">
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+            <End Role="MODULO" EntitySet="MODULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPCION__CODIGO_M__690797E6" Association="Self.FK__OPCION__CODIGO_M__690797E6">
+            <End Role="MODULO" EntitySet="MODULO" />
+            <End Role="OPCION" EntitySet="OPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERFIL__CODIGO_S__656C112C" Association="Self.FK__PERFIL__CODIGO_S__656C112C">
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+            <End Role="PERFIL" EntitySet="PERFIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERMISOS__CODIGO__66603565" Association="Self.FK__PERMISOS__CODIGO__66603565">
+            <End Role="PERFIL" EntitySet="PERFIL" />
+            <End Role="PERMISOS" EntitySet="PERMISOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERMISOS__CODIGO__73852659" Association="Self.FK__PERMISOS__CODIGO__73852659">
+            <End Role="ACCION" EntitySet="ACCION" />
+            <End Role="PERMISOS" EntitySet="PERMISOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERMISOS__CODIGO__74794A92" Association="Self.FK__PERMISOS__CODIGO__74794A92">
+            <End Role="OPCION" EntitySet="OPCION" />
+            <End Role="PERMISOS" EntitySet="PERMISOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SGRS_Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="PARAMETRO">
+          <Key>
+            <PropertyRef Name="CODIGO_PARAMETRO" />
+          </Key>
+          <Property Name="CODIGO_PARAMETRO" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_PADRE" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="NOMBRE_CORTO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="VALOR" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="VALOR_FECHA" Type="DateTime" Precision="3" />
+          <Property Name="ORDEN" Type="Int32" />
+          <Property Name="NIVEL" Type="Int32" />
+          <Property Name="DESCRIPCION_NOTIFICACION" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TIPO_PARAMETRO" Type="Int16" />
+          <Property Name="ESTADO_REGISTRO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_SISTEMA" Type="Int32" />
+          <Property Name="CODIGO_SISTEMA_PADRE" Type="Int32" />
+        </EntityType>
+        <EntityType Name="UBIGEO">
+          <Key>
+            <PropertyRef Name="CODIGO_UBIGEO" />
+          </Key>
+          <Property Name="CODIGO_UBIGEO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="UBIGEO1" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DEPARTAMENTO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PROVINCIA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DISTRITO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ACCION">
+          <Key>
+            <PropertyRef Name="CODIGO_ACCION" />
+          </Key>
+          <Property Name="CODIGO_ACCION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="BOTON" Type="String" MaxLength="15" FixedLength="false" Unicode="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="PERMISOS" Relationship="Self.FK__PERMISOS__CODIGO__73852659" FromRole="ACCION" ToRole="PERMISOS" />
+        </EntityType>
+        <EntityType Name="ASIGNACION">
+          <Key>
+            <PropertyRef Name="CODIGO_ASIGNACION" />
+          </Key>
+          <Property Name="CODIGO_ASIGNACION" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_SISTEMA" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_USUARIO" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_PERFIL" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SISTEMA" Relationship="Self.FK__ASIGNACIO__CODIG__5FB337D6" FromRole="ASIGNACION" ToRole="SISTEMA" />
+          <NavigationProperty Name="USUARIOS" Relationship="Self.FK__ASIGNACIO__CODIG__60A75C0F" FromRole="ASIGNACION" ToRole="USUARIOS" />
+          <NavigationProperty Name="PERFIL" Relationship="Self.FK__ASIGNACIO__CODIG__619B8048" FromRole="ASIGNACION" ToRole="PERFIL" />
+        </EntityType>
+        <EntityType Name="EMPRESA">
+          <Key>
+            <PropertyRef Name="CODIGO_EMPRESA" />
+          </Key>
+          <Property Name="CODIGO_EMPRESA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RAZON_SOCIAL" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="ALIAS" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="RUC" Type="String" MaxLength="11" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DIRECCION" Type="String" MaxLength="252" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="LOG">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="LogLevelId" Type="Int32" Nullable="false" />
+          <Property Name="ShortMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="FullMessage" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IpAddress" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerId" Type="Int32" />
+          <Property Name="PageUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ReferrerUrl" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CreatedOnUtc" Type="DateTime" Nullable="false" Precision="7" />
+        </EntityType>
+        <EntityType Name="MODULO">
+          <Key>
+            <PropertyRef Name="CODIGO_MODULO" />
+          </Key>
+          <Property Name="CODIGO_MODULO" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_SISTEMA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="MODULO_PADRE" Type="Int32" />
+          <Property Name="GLYPHICON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="RUTA_IMAGEN" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CONTROLADOR" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="METODO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AREA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ORDEN" Type="Int32" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="SISTEMA" Relationship="Self.FK__MODULO__CODIGO_S__662B2B3B" FromRole="MODULO" ToRole="SISTEMA" />
+          <NavigationProperty Name="OPCION" Relationship="Self.FK__OPCION__CODIGO_M__690797E6" FromRole="MODULO" ToRole="OPCION" />
+        </EntityType>
+        <EntityType Name="OPCION">
+          <Key>
+            <PropertyRef Name="CODIGO_OPCION" />
+          </Key>
+          <Property Name="CODIGO_OPCION" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_MODULO" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="GLYPHICON" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CONTROLADOR" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="METODO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="AREA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ORDEN" Type="Int32" />
+          <Property Name="ESTADO" Type="Boolean" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="MODULO" Relationship="Self.FK__OPCION__CODIGO_M__690797E6" FromRole="OPCION" ToRole="MODULO" />
+          <NavigationProperty Name="PERMISOS" Relationship="Self.FK__PERMISOS__CODIGO__74794A92" FromRole="OPCION" ToRole="PERMISOS" />
+        </EntityType>
+        <EntityType Name="PERFIL">
+          <Key>
+            <PropertyRef Name="CODIGO_PERFIL" />
+          </Key>
+          <Property Name="CODIGO_PERFIL" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_SISTEMA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ASIGNACION" Relationship="Self.FK__ASIGNACIO__CODIG__619B8048" FromRole="PERFIL" ToRole="ASIGNACION" />
+          <NavigationProperty Name="SISTEMA" Relationship="Self.FK__PERFIL__CODIGO_S__656C112C" FromRole="PERFIL" ToRole="SISTEMA" />
+          <NavigationProperty Name="PERMISOS" Relationship="Self.FK__PERMISOS__CODIGO__66603565" FromRole="PERFIL" ToRole="PERMISOS" />
+        </EntityType>
+        <EntityType Name="PERMISOS">
+          <Key>
+            <PropertyRef Name="CODIGO_PERMISOS" />
+          </Key>
+          <Property Name="CODIGO_PERMISOS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_PERFIL" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_ACCION" Type="Int32" Nullable="false" />
+          <Property Name="CODIGO_OPCION" Type="Int32" Nullable="false" />
+          <Property Name="ESTADO_PERMISO" Type="Boolean" Nullable="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ACCION" Relationship="Self.FK__PERMISOS__CODIGO__73852659" FromRole="PERMISOS" ToRole="ACCION" />
+          <NavigationProperty Name="OPCION" Relationship="Self.FK__PERMISOS__CODIGO__74794A92" FromRole="PERMISOS" ToRole="OPCION" />
+          <NavigationProperty Name="PERFIL" Relationship="Self.FK__PERMISOS__CODIGO__66603565" FromRole="PERMISOS" ToRole="PERFIL" />
+        </EntityType>
+        <EntityType Name="SISTEMA">
+          <Key>
+            <PropertyRef Name="CODIGO_SISTEMA" />
+          </Key>
+          <Property Name="CODIGO_SISTEMA" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CODIGO_EMPRESA" Type="Int32" Nullable="false" />
+          <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="DESCRIPCION" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="RUTA" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="TOKEN" Type="String" MaxLength="32" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="PARAMETRO" Type="Int32" />
+          <Property Name="VALOR_PARAMETRO" Type="Int32" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ASIGNACION" Relationship="Self.FK__ASIGNACIO__CODIG__5FB337D6" FromRole="SISTEMA" ToRole="ASIGNACION" />
+          <NavigationProperty Name="MODULO" Relationship="Self.FK__MODULO__CODIGO_S__662B2B3B" FromRole="SISTEMA" ToRole="MODULO" />
+          <NavigationProperty Name="PERFIL" Relationship="Self.FK__PERFIL__CODIGO_S__656C112C" FromRole="SISTEMA" ToRole="PERFIL" />
+        </EntityType>
+        <EntityType Name="USUARIOS">
+          <Key>
+            <PropertyRef Name="CODIGO_USUARIO" />
+          </Key>
+          <Property Name="CODIGO_USUARIO" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="NOMBRE" Type="String" MaxLength="250" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="APELLIDO" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="EMAIL" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_TIPO_DOCUMENTO_IDENTIDAD" Type="Int32" />
+          <Property Name="NUM_DOCUMENTO_IDENTIDAD" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="USUARIO" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="CONTRASENA" Type="String" MaxLength="800" FixedLength="false" Unicode="false" />
+          <Property Name="DOMINIO_RED" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_PERSONA" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+          <Property Name="CODIGO_CARGO" Type="Int32" />
+          <Property Name="ACTIVE_DIRECTORY" Type="Boolean" />
+          <Property Name="CODIGO_EMPRESA" Type="Int32" />
+          <Property Name="INDICADOR_INT_EXT_PNAT" Type="Int32" Nullable="false" />
+          <Property Name="CELULAR" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="ESTADO" Type="Boolean" Nullable="false" />
+          <Property Name="USUARIO_CREACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="FECHA_CREACION" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="TERMINAL_CREACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="USUARIO_MODIFICACION" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="FECHA_MODIFICACION" Type="DateTime" Precision="3" />
+          <Property Name="TERMINAL_MODIFICACION" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+          <Property Name="TELEFONO" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <Property Name="ULTIMO_DIGITO" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FECHA_EMISION" Type="String" MaxLength="35" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="ASIGNACION" Relationship="Self.FK__ASIGNACIO__CODIG__60A75C0F" FromRole="USUARIOS" ToRole="ASIGNACION" />
+        </EntityType>
+        <Association Name="FK__PERMISOS__CODIGO__73852659">
+          <End Role="ACCION" Type="Self.ACCION" Multiplicity="1" />
+          <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ACCION">
+              <PropertyRef Name="CODIGO_ACCION" />
+            </Principal>
+            <Dependent Role="PERMISOS">
+              <PropertyRef Name="CODIGO_ACCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ASIGNACIO__CODIG__5FB337D6">
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="1" />
+          <End Role="ASIGNACION" Type="Self.ASIGNACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SISTEMA">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Principal>
+            <Dependent Role="ASIGNACION">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ASIGNACIO__CODIG__60A75C0F">
+          <End Role="USUARIOS" Type="Self.USUARIOS" Multiplicity="1" />
+          <End Role="ASIGNACION" Type="Self.ASIGNACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="USUARIOS">
+              <PropertyRef Name="CODIGO_USUARIO" />
+            </Principal>
+            <Dependent Role="ASIGNACION">
+              <PropertyRef Name="CODIGO_USUARIO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__ASIGNACIO__CODIG__619B8048">
+          <End Role="PERFIL" Type="Self.PERFIL" Multiplicity="1" />
+          <End Role="ASIGNACION" Type="Self.ASIGNACION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERFIL">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Principal>
+            <Dependent Role="ASIGNACION">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__MODULO__CODIGO_S__662B2B3B">
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="1" />
+          <End Role="MODULO" Type="Self.MODULO" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SISTEMA">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Principal>
+            <Dependent Role="MODULO">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__OPCION__CODIGO_M__690797E6">
+          <End Role="MODULO" Type="Self.MODULO" Multiplicity="1" />
+          <End Role="OPCION" Type="Self.OPCION" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="MODULO">
+              <PropertyRef Name="CODIGO_MODULO" />
+            </Principal>
+            <Dependent Role="OPCION">
+              <PropertyRef Name="CODIGO_MODULO" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERMISOS__CODIGO__74794A92">
+          <End Role="OPCION" Type="Self.OPCION" Multiplicity="1" />
+          <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="OPCION">
+              <PropertyRef Name="CODIGO_OPCION" />
+            </Principal>
+            <Dependent Role="PERMISOS">
+              <PropertyRef Name="CODIGO_OPCION" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERFIL__CODIGO_S__656C112C">
+          <End Role="SISTEMA" Type="Self.SISTEMA" Multiplicity="1" />
+          <End Role="PERFIL" Type="Self.PERFIL" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SISTEMA">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Principal>
+            <Dependent Role="PERFIL">
+              <PropertyRef Name="CODIGO_SISTEMA" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK__PERMISOS__CODIGO__66603565">
+          <End Role="PERFIL" Type="Self.PERFIL" Multiplicity="1" />
+          <End Role="PERMISOS" Type="Self.PERMISOS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PERFIL">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Principal>
+            <Dependent Role="PERMISOS">
+              <PropertyRef Name="CODIGO_PERFIL" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SGRS_Conexion" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PARAMETRO" EntityType="Self.PARAMETRO" />
+          <EntitySet Name="UBIGEO" EntityType="Self.UBIGEO" />
+          <EntitySet Name="ACCION" EntityType="Self.ACCION" />
+          <EntitySet Name="ASIGNACION" EntityType="Self.ASIGNACION" />
+          <EntitySet Name="EMPRESA" EntityType="Self.EMPRESA" />
+          <EntitySet Name="LOG" EntityType="Self.LOG" />
+          <EntitySet Name="MODULO" EntityType="Self.MODULO" />
+          <EntitySet Name="OPCION" EntityType="Self.OPCION" />
+          <EntitySet Name="PERFIL" EntityType="Self.PERFIL" />
+          <EntitySet Name="PERMISOS" EntityType="Self.PERMISOS" />
+          <EntitySet Name="SISTEMA" EntityType="Self.SISTEMA" />
+          <EntitySet Name="USUARIOS" EntityType="Self.USUARIOS" />
+          <AssociationSet Name="FK__PERMISOS__CODIGO__73852659" Association="Self.FK__PERMISOS__CODIGO__73852659">
+            <End Role="ACCION" EntitySet="ACCION" />
+            <End Role="PERMISOS" EntitySet="PERMISOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ASIGNACIO__CODIG__5FB337D6" Association="Self.FK__ASIGNACIO__CODIG__5FB337D6">
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+            <End Role="ASIGNACION" EntitySet="ASIGNACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ASIGNACIO__CODIG__60A75C0F" Association="Self.FK__ASIGNACIO__CODIG__60A75C0F">
+            <End Role="USUARIOS" EntitySet="USUARIOS" />
+            <End Role="ASIGNACION" EntitySet="ASIGNACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__ASIGNACIO__CODIG__619B8048" Association="Self.FK__ASIGNACIO__CODIG__619B8048">
+            <End Role="PERFIL" EntitySet="PERFIL" />
+            <End Role="ASIGNACION" EntitySet="ASIGNACION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__MODULO__CODIGO_S__662B2B3B" Association="Self.FK__MODULO__CODIGO_S__662B2B3B">
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+            <End Role="MODULO" EntitySet="MODULO" />
+          </AssociationSet>
+          <AssociationSet Name="FK__OPCION__CODIGO_M__690797E6" Association="Self.FK__OPCION__CODIGO_M__690797E6">
+            <End Role="MODULO" EntitySet="MODULO" />
+            <End Role="OPCION" EntitySet="OPCION" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERMISOS__CODIGO__74794A92" Association="Self.FK__PERMISOS__CODIGO__74794A92">
+            <End Role="OPCION" EntitySet="OPCION" />
+            <End Role="PERMISOS" EntitySet="PERMISOS" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERFIL__CODIGO_S__656C112C" Association="Self.FK__PERFIL__CODIGO_S__656C112C">
+            <End Role="SISTEMA" EntitySet="SISTEMA" />
+            <End Role="PERFIL" EntitySet="PERFIL" />
+          </AssociationSet>
+          <AssociationSet Name="FK__PERMISOS__CODIGO__66603565" Association="Self.FK__PERMISOS__CODIGO__66603565">
+            <End Role="PERFIL" EntitySet="PERFIL" />
+            <End Role="PERMISOS" EntitySet="PERMISOS" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SGRS_ModelStoreContainer" CdmEntityContainer="SGRS_Conexion">
+          <EntitySetMapping Name="PARAMETRO">
+            <EntityTypeMapping TypeName="SGRS_Model.PARAMETRO">
+              <MappingFragment StoreEntitySet="PARAMETRO">
+                <ScalarProperty Name="CODIGO_PARAMETRO" ColumnName="CODIGO_PARAMETRO" />
+                <ScalarProperty Name="CODIGO_PADRE" ColumnName="CODIGO_PADRE" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="NOMBRE_CORTO" ColumnName="NOMBRE_CORTO" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="VALOR" ColumnName="VALOR" />
+                <ScalarProperty Name="VALOR_FECHA" ColumnName="VALOR_FECHA" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="NIVEL" ColumnName="NIVEL" />
+                <ScalarProperty Name="DESCRIPCION_NOTIFICACION" ColumnName="DESCRIPCION_NOTIFICACION" />
+                <ScalarProperty Name="TIPO_PARAMETRO" ColumnName="TIPO_PARAMETRO" />
+                <ScalarProperty Name="ESTADO_REGISTRO" ColumnName="ESTADO_REGISTRO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+                <ScalarProperty Name="CODIGO_SISTEMA" ColumnName="CODIGO_SISTEMA" />
+                <ScalarProperty Name="CODIGO_SISTEMA_PADRE" ColumnName="CODIGO_SISTEMA_PADRE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="UBIGEO">
+            <EntityTypeMapping TypeName="SGRS_Model.UBIGEO">
+              <MappingFragment StoreEntitySet="UBIGEO">
+                <ScalarProperty Name="CODIGO_UBIGEO" ColumnName="CODIGO_UBIGEO" />
+                <ScalarProperty Name="UBIGEO1" ColumnName="UBIGEO" />
+                <ScalarProperty Name="DEPARTAMENTO" ColumnName="DEPARTAMENTO" />
+                <ScalarProperty Name="PROVINCIA" ColumnName="PROVINCIA" />
+                <ScalarProperty Name="DISTRITO" ColumnName="DISTRITO" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ACCION">
+            <EntityTypeMapping TypeName="SGRS_Model.ACCION">
+              <MappingFragment StoreEntitySet="ACCION">
+                <ScalarProperty Name="CODIGO_ACCION" ColumnName="CODIGO_ACCION" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="BOTON" ColumnName="BOTON" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ASIGNACION">
+            <EntityTypeMapping TypeName="SGRS_Model.ASIGNACION">
+              <MappingFragment StoreEntitySet="ASIGNACION">
+                <ScalarProperty Name="CODIGO_ASIGNACION" ColumnName="CODIGO_ASIGNACION" />
+                <ScalarProperty Name="CODIGO_SISTEMA" ColumnName="CODIGO_SISTEMA" />
+                <ScalarProperty Name="CODIGO_USUARIO" ColumnName="CODIGO_USUARIO" />
+                <ScalarProperty Name="CODIGO_PERFIL" ColumnName="CODIGO_PERFIL" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="EMPRESA">
+            <EntityTypeMapping TypeName="SGRS_Model.EMPRESA">
+              <MappingFragment StoreEntitySet="EMPRESA">
+                <ScalarProperty Name="CODIGO_EMPRESA" ColumnName="CODIGO_EMPRESA" />
+                <ScalarProperty Name="RAZON_SOCIAL" ColumnName="RAZON_SOCIAL" />
+                <ScalarProperty Name="ALIAS" ColumnName="ALIAS" />
+                <ScalarProperty Name="RUC" ColumnName="RUC" />
+                <ScalarProperty Name="DIRECCION" ColumnName="DIRECCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LOG">
+            <EntityTypeMapping TypeName="SGRS_Model.LOG">
+              <MappingFragment StoreEntitySet="LOG">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="LogLevelId" ColumnName="LogLevelId" />
+                <ScalarProperty Name="ShortMessage" ColumnName="ShortMessage" />
+                <ScalarProperty Name="FullMessage" ColumnName="FullMessage" />
+                <ScalarProperty Name="IpAddress" ColumnName="IpAddress" />
+                <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+                <ScalarProperty Name="PageUrl" ColumnName="PageUrl" />
+                <ScalarProperty Name="ReferrerUrl" ColumnName="ReferrerUrl" />
+                <ScalarProperty Name="CreatedOnUtc" ColumnName="CreatedOnUtc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MODULO">
+            <EntityTypeMapping TypeName="SGRS_Model.MODULO">
+              <MappingFragment StoreEntitySet="MODULO">
+                <ScalarProperty Name="CODIGO_MODULO" ColumnName="CODIGO_MODULO" />
+                <ScalarProperty Name="CODIGO_SISTEMA" ColumnName="CODIGO_SISTEMA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="MODULO_PADRE" ColumnName="MODULO_PADRE" />
+                <ScalarProperty Name="GLYPHICON" ColumnName="GLYPHICON" />
+                <ScalarProperty Name="RUTA_IMAGEN" ColumnName="RUTA_IMAGEN" />
+                <ScalarProperty Name="CONTROLADOR" ColumnName="CONTROLADOR" />
+                <ScalarProperty Name="METODO" ColumnName="METODO" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="OPCION">
+            <EntityTypeMapping TypeName="SGRS_Model.OPCION">
+              <MappingFragment StoreEntitySet="OPCION">
+                <ScalarProperty Name="CODIGO_OPCION" ColumnName="CODIGO_OPCION" />
+                <ScalarProperty Name="CODIGO_MODULO" ColumnName="CODIGO_MODULO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="GLYPHICON" ColumnName="GLYPHICON" />
+                <ScalarProperty Name="CONTROLADOR" ColumnName="CONTROLADOR" />
+                <ScalarProperty Name="METODO" ColumnName="METODO" />
+                <ScalarProperty Name="AREA" ColumnName="AREA" />
+                <ScalarProperty Name="ORDEN" ColumnName="ORDEN" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERFIL">
+            <EntityTypeMapping TypeName="SGRS_Model.PERFIL">
+              <MappingFragment StoreEntitySet="PERFIL">
+                <ScalarProperty Name="CODIGO_PERFIL" ColumnName="CODIGO_PERFIL" />
+                <ScalarProperty Name="CODIGO_SISTEMA" ColumnName="CODIGO_SISTEMA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PERMISOS">
+            <EntityTypeMapping TypeName="SGRS_Model.PERMISOS">
+              <MappingFragment StoreEntitySet="PERMISOS">
+                <ScalarProperty Name="CODIGO_PERMISOS" ColumnName="CODIGO_PERMISOS" />
+                <ScalarProperty Name="CODIGO_PERFIL" ColumnName="CODIGO_PERFIL" />
+                <ScalarProperty Name="CODIGO_ACCION" ColumnName="CODIGO_ACCION" />
+                <ScalarProperty Name="CODIGO_OPCION" ColumnName="CODIGO_OPCION" />
+                <ScalarProperty Name="ESTADO_PERMISO" ColumnName="ESTADO_PERMISO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SISTEMA">
+            <EntityTypeMapping TypeName="SGRS_Model.SISTEMA">
+              <MappingFragment StoreEntitySet="SISTEMA">
+                <ScalarProperty Name="CODIGO_SISTEMA" ColumnName="CODIGO_SISTEMA" />
+                <ScalarProperty Name="CODIGO_EMPRESA" ColumnName="CODIGO_EMPRESA" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="DESCRIPCION" ColumnName="DESCRIPCION" />
+                <ScalarProperty Name="RUTA" ColumnName="RUTA" />
+                <ScalarProperty Name="TOKEN" ColumnName="TOKEN" />
+                <ScalarProperty Name="PARAMETRO" ColumnName="PARAMETRO" />
+                <ScalarProperty Name="VALOR_PARAMETRO" ColumnName="VALOR_PARAMETRO" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="USUARIOS">
+            <EntityTypeMapping TypeName="SGRS_Model.USUARIOS">
+              <MappingFragment StoreEntitySet="USUARIOS">
+                <ScalarProperty Name="CODIGO_USUARIO" ColumnName="CODIGO_USUARIO" />
+                <ScalarProperty Name="NOMBRE" ColumnName="NOMBRE" />
+                <ScalarProperty Name="APELLIDO" ColumnName="APELLIDO" />
+                <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+                <ScalarProperty Name="CODIGO_TIPO_DOCUMENTO_IDENTIDAD" ColumnName="CODIGO_TIPO_DOCUMENTO_IDENTIDAD" />
+                <ScalarProperty Name="NUM_DOCUMENTO_IDENTIDAD" ColumnName="NUM_DOCUMENTO_IDENTIDAD" />
+                <ScalarProperty Name="FOTO" ColumnName="FOTO" />
+                <ScalarProperty Name="USUARIO" ColumnName="USUARIO" />
+                <ScalarProperty Name="CONTRASENA" ColumnName="CONTRASENA" />
+                <ScalarProperty Name="DOMINIO_RED" ColumnName="DOMINIO_RED" />
+                <ScalarProperty Name="CODIGO_PERSONA" ColumnName="CODIGO_PERSONA" />
+                <ScalarProperty Name="CODIGO_CARGO" ColumnName="CODIGO_CARGO" />
+                <ScalarProperty Name="ACTIVE_DIRECTORY" ColumnName="ACTIVE_DIRECTORY" />
+                <ScalarProperty Name="CODIGO_EMPRESA" ColumnName="CODIGO_EMPRESA" />
+                <ScalarProperty Name="INDICADOR_INT_EXT_PNAT" ColumnName="INDICADOR_INT_EXT_PNAT" />
+                <ScalarProperty Name="CELULAR" ColumnName="CELULAR" />
+                <ScalarProperty Name="ESTADO" ColumnName="ESTADO" />
+                <ScalarProperty Name="USUARIO_CREACION" ColumnName="USUARIO_CREACION" />
+                <ScalarProperty Name="FECHA_CREACION" ColumnName="FECHA_CREACION" />
+                <ScalarProperty Name="TERMINAL_CREACION" ColumnName="TERMINAL_CREACION" />
+                <ScalarProperty Name="USUARIO_MODIFICACION" ColumnName="USUARIO_MODIFICACION" />
+                <ScalarProperty Name="FECHA_MODIFICACION" ColumnName="FECHA_MODIFICACION" />
+                <ScalarProperty Name="TERMINAL_MODIFICACION" ColumnName="TERMINAL_MODIFICACION" />
+                <ScalarProperty Name="TELEFONO" ColumnName="TELEFONO" />
+                <ScalarProperty Name="ULTIMO_DIGITO" ColumnName="ULTIMO_DIGITO" />
+                <ScalarProperty Name="FECHA_EMISION" ColumnName="FECHA_EMISION" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>SGRS</title>
+    <meta content="Sistema de Gestion de Responsabilidad Social" name="description" />
+    <meta content="ElectroPeru" name="author" />
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+    @RenderSection("styles", required: false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+
+    <link href="~/plugins/gmd-grid/css/GMDGrid.css" rel="stylesheet" />
+    <script src="~/plugins/gmd-grid/js/jsGMDWebGrid.js"></script>
+    <link href="~/plugins/bootstrap-colorpicker/css/bootstrap-colorpicker.css" rel="stylesheet" />
+    <link href="~/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.css" rel="stylesheet" />
+
+    <script src="~/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
+    <script src="~/plugins/bootstrap-datepicker/dist/js/bootstrap-datepicker.js"></script>
+    <script src="~/plugins/bootstrap-datepicker/js/locales/bootstrap-datepicker.es.js"></script>
+    @Styles.Render("~/bundles/ExtencionesCSS")
+
+    <style>
+       
+    </style>
+</head>
+
+<body>
+
+
+    <div id="wrapper">
+        @Html.Partial("_Header")
+        <div class="content-page">
+            <!-- Start content -->
+            <div class="content">
+                <div class="container-fluid">
+                  
+
+                    <div id="content-partial" class="content-wrapper divLayoutBody" style="min-height:unset!important;">
+                        <section class="content" style="margin-top: 0px">
+                            <div id="divLayoutBody">
+                                <!-- Inicio de la Pagina -->
+                                @RenderBody()
+                            </div>
+                        </section>
+                    </div>
+                </div><!-- content -->
+                @Html.Partial("_Footer")
+            </div>
+        </div>
+
+
+    </div>
+
+    <script src="~/Scripts/app.js"></script>
+
+
+
+    <script>
+
+        function LoadLoading() {
+            $('body').addClass('loading');
+        }
+
+        function UnloadLoading() {
+            $('body').removeClass('loading');
+        }
+
+        function nobackbutton() {
+
+
+            window.location.hash = "SGRS";
+            window.location.hash = "Again-PGA"
+            window.onhashchange = function () {
+
+                window.location.hash = "SGRS";
+                var jash = window.location.hash;
+
+                alert("Tu hash es: " + jash)
+            }
+        }
+
+
+    </script>
+    <script type="text/javascript">
+
+    </script>
+
+    @Scripts.Render("~/bundles/ExtencionesJS")
+
+
+  
+
+
+@RenderSection("scripts", required: false)
+</body>
+</html>

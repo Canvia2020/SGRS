@@ -1,0 +1,958 @@
+﻿
+@{
+    ViewBag.Title = "Convenio_Add";
+    Layout = "~/Views/Shared/_Master.cshtml";
+}
+
+<style>
+    .input-group-addon.btn.btn-success > a {
+        color: #fff;
+    }
+
+    .input-group-addon.btn.btn-success {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+    .image-preview-input {
+        position: relative;
+        overflow: hidden;
+        margin: 0px;
+        padding: 8px;
+        color: #333;
+        background-color: #fff;
+        border-color: #ccc;
+    }
+
+        .image-preview-input input[type=file] {
+            position: absolute;
+            top: 0;
+            right: 0;
+            margin: 0;
+            padding: 0;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            filter: alpha(opacity=0);
+            overflow: hidden;
+        }
+
+    .image-preview-input-title {
+        margin-left: 2px;
+        overflow: hidden;
+    }
+
+    .input-group-addon.btn.btn-danger {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+        .input-group-addon.btn.btn-danger > a {
+            color: #FFF;
+            padding: 0 5px;
+        }
+
+    /* Start Default Button */
+    .input-group-addon.btn.btn-default {
+        border-bottom-right-radius: 3px;
+        border-top-right-radius: 3px;
+    }
+
+        .input-group-addon.btn.btn-default > a {
+            color: #707478;
+            padding: 0 5px;
+        }
+</style>
+
+6<div class="row">
+    <div class="col-md-12">
+        <div class="form-group col-md-12 pad-pan-ef-2">
+            <div class="panel panel-default mar-bot-0px">
+                <div class="panel-heading pad-pan-ef-4">
+                    <h5>
+                        <span id="titulo-opcion" class="titulo-opcion">@*@Model.NOMBRE_PANTALLA*@<span id="spnNroFilas"></span></span>
+                    </h5>
+                </div>
+                <div class="panel-body">
+
+
+                    <div class="card m-b-20">
+                        <div class="card-body">
+
+                            @*<h4 class="mt-0 header-title">Colorpicker</h4>
+                                <p class="text-muted m-b-30">
+                                    Fancy and customizable colorpicker
+                                    plugin for Twitter Bootstrap.
+                                </p>*@
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="example-text-input" class="col-sm-4 col-form-label">Nro Convenio: </label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" id="txtNroConvenio" />
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="cboTipoConvenio" class="col-sm-4 col-form-label">Tipo Convenio:</label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control">
+                                                <option value="administrador"> Seleccione </option>
+                                                <option value="administrador">Productivo</option>
+                                                <option value="Edicativo">Edicativo</option>
+                                                <option value="Social">Social</option>
+                                                <option value="Comunicación">Comunicación</option>
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="card m-b-20">
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="cboTipoProviene" class="col-sm-4 col-form-label">Tipo  <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" name="cboNroSolicitud" required="">
+                                                <option value="administrador" selected> Seleccione </option>
+                                                <option value="administrador">Solicitud</option>
+                                                <option value="Edicativo">Mesa de dialogo</option>
+
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="txtTipoProviene" class="col-sm-4 col-form-label">Nro: <span class="text-danger"></span></label>
+                                        <div class="col-sm-8">
+                                            <input class="form-control" type="text" id="txtTipoProviene" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="cboDepartamento" class="col-sm-4 col-form-label">Departamento: <span class="text-danger"></span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" name="cboDepartamento" required="">
+                                                <option value="administrador"> HUANCAVELICA </option>
+                                                <option value="administrador">Nro 78237</option>
+                                                <option value="Edicativo">Nro 78237</option>
+                                                <option value="Social">solicitud población de pampas </option>
+                                                <option value="Comunicación">Nro 78237</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="cboProvincia" class="col-sm-4 col-form-label">Provincia: <span class="text-danger"></span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control " name="cboProvincia" required="">
+                                                <option value="administrador"> Seleccione </option>
+                                                <option value="administrador">TAYACAJA</option>
+                                                <option value="Edicativo">Nro 78237</option>
+                                                <option value="Social">solicitud población de pampas </option>
+                                                <option value="Comunicación">Nro 78237</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="cboDistrito" class="col-sm-4 col-form-label">Distrito: <span class="text-danger"></span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" name="cboDistrito" required="">
+                                                <option value="administrador" selected> Seleccione </option>
+                                                <option value="administrador">COLCABAMBA</option>
+                                                <option value="Edicativo">Nro 78237</option>
+                                                <option value="Social">solicitud población de pampas </option>
+                                                <option value="Comunicación">Nro 78237</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="cboCentroPoblado" class="col-sm-4 col-form-label">Centro Poblado: <span class="text-danger"></span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" name="cboCentroPoblado" required="">
+                                                <option value="administrador" selected> Seleccione </option>
+                                                <option value="administrador">COLCABAMBA</option>
+                                                <option value="Edicativo">SAN LUIS DE ESTANQUE</option>
+                                                <option value="Social">IQUIUZA</option>
+                                                <option value="Comunicación">RUNDOVILCA</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="cboComunidad" class="col-sm-4 col-form-label">Comunidad: <span class="text-danger"></span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" name="cboComunidad" required="">
+                                                <option value="administrador" selected> Seleccione </option>
+                                                <option value="administrador">Nro 78237</option>
+                                                <option value="Edicativo">Nro 78237</option>
+                                                <option value="Social">solicitud población de pampas </option>
+                                                <option value="Comunicación">Nro 78237</option>
+                                            </select>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="cboInstitución" class="col-sm-4 col-form-label">Institución: <span class="text-danger">*</span></label>
+                                        <div class="col-sm-8">
+                                            <select class="form-control" name="cboInstitución" required="">
+                                                <option value="administrador" selected> Seleccione </option>
+                                                <option value="administrador">Nro 78237</option>
+                                                <option value="administrador">Nro 78237</option>
+
+                                            </select>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                            </div>
+
+
+                            <div class="row">
+
+                                <div class="col-md-12">
+                                    <div class="form-group row">
+                                        <label for="txtDescripcion" class="col-sm-4  col-md-2 col-form-label">Descripción : <span class="text-danger"></span></label>
+                                        <div class="col-sm-8 col-md-10">
+                                            <input class="form-control" type="text" id="txtDescripcion" />
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+
+                                    <div class="form-group row">
+                                        <label for="txtCantBeneficiados" class="col-sm-4 col-form-label">Cant.Personas Beneficiadas : <span class="text-danger"></span></label>
+                                        <div class="col-sm-4">
+                                            <input type="number" class="form-control" id="txtCantBeneficiados" name="txtCantBeneficiados" min="0" max="100" value="0">
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="txtCantAdendas" class="col-sm-4 col-form-label">Cant. Adendas :<span class="text-danger"></span></label>
+                                        <div class="col-sm-4">
+                                            <input type="number" class="form-control" id="txtCantAdendas" name="txtCantAdendas" min="0" max="100" value="0">
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="txtFechaInicio" class="col-sm-4 col-form-label">Fecha Inicio<span class="text-danger"></span></label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" type="text" id="txtFechaInicio" />
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group row">
+                                        <label for="txtFechaFin" class="col-sm-4 col-form-label">Fecha Fin<span class="text-danger"></span></label>
+                                        <div class="col-sm-4">
+                                            <input class="form-control" type="text" id="txtFechaFin" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card m-b-20">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card m-b-20">
+                                        <div class="card-body">
+
+                                            <h4 class="mt-0 header-title">Adicionales</h4>
+
+                                            <!-- Nav tabs -->
+                                            <ul class="nav nav-tabs" role="tablist">
+                                                <li class="nav-item">
+                                                    <a class="nav-link active" data-toggle="tab" href="#tabConvenio" role="tab">Doc. Convenio</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabComunidades" role="tab">Comunidades</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabPresupuesto" role="tab">Presupuesto</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabPagos" role="tab">Pagos</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabMesaDialogo" role="tab">Mesa de dialogo</a>
+                                                </li>
+                                                <li class="nav-item">
+                                                    <a class="nav-link" data-toggle="tab" href="#tabNotas" role="tab">Notas</a>
+                                                </li>
+                                            </ul>
+
+                                            <!-- Tab tabConvenio -->
+                                            <div class="tab-content">
+                                                <div class="tab-pane active p-3" id="tabConvenio" role="tabpanel">
+
+
+                                                    <div class="row">
+                                                        <div class="card m-b-20">
+                                                            <div class="card-body">
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+
+                                                                        <h5 class="page-header">
+                                                                            <a class="btn btn-primary" data-toggle="modal" href="#modalDocumentosConvenio">
+                                                                                <i class="fa fa-plus"></i>
+                                                                                Agregar Un documento
+                                                                            </a>
+                                                                        </h5>
+
+                                                                        <div id="hide-table">
+                                                                            <div id="example1_wrapper" class="dataTables_wrapper form-inline no-footer">
+                                                                                @*<div class="dt-buttons">
+                                                                                        <a class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1"><span>Copy</span></a>
+                                                                                        <a class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1"><span>Excel</span></a>
+                                                                                        <a class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1"><span>CSV</span></a>
+                                                                                        <a class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1"><span>PDF</span></a>
+                                                                                    </div>*@
+                                                                                @*<div id="example1_filter" class="dataTables_filter">
+                                                                                        <label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label>
+                                                                                    </div>*@
+                                                                                <table id="example1" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="example1_info">
+                                                                                    <thead>
+                                                                                    <tr role="row">
+                                                                                        <th class="col-lg-1 sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 98.0218px;">#</th>
+                                                                                        <th class="col-lg-3 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nombre Del Examen: activate to sort column ascending" style="width: 330.022px;">Nombre del documento</th>
+                                                                                        <th class="col-lg-3 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Fecha: activate to sort column ascending" style="width: 330.022px;">Fecha</th>
+                                                                                        <th class="col-lg-3 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nota: activate to sort column ascending" style="width: 331.022px;">Archivo</th>
+                                                                                        <th class="col-lg-2 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Acción: activate to sort column ascending" style="width: 215.022px;">Acción</th>
+                                                                                    </tr>
+                                                                                    </thead>
+                                                                                    <tbody id="tbGrillaDocumentoConvenio">
+
+                                                                                      
+
+                                                                                    @*<tr role="row" class="odd">
+                                                                                            <td data-title="#" class="sorting_1">
+                                                                                                1
+                                                                                            </td>
+                                                                                            <td data-title="Nombre">
+                                                                                                convenio demo
+                                                                                            </td>
+                                                                                            <td data-title="Fecha">
+                                                                                                18/06/2020
+                                                                                            </td>
+
+                                                                                            <td data-title="Nota">
+                                                                                                <a href="" class="btn btn-primary btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Archivo"><i class="fa fa-clipboard-list"></i></a>
+                                                                                            </td>
+                                                                                            <td data-title="Acción">
+                                                                                                <a href="" class="btn btn-warning btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                                                                                <a href="" onclick="return confirm('Estas apunto de eliminar un registro,  ¿Estás seguro de eliminar estos datos?')" class="btn btn-danger btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Eliminar"><i class="fa fa-plus-circle"></i></a>
+
+                                                                                            </td>
+                                                                                        </tr>*@
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                @*<div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div><div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination">
+                                                                                    <li class="paginate_button previous disabled" aria-controls="example1" tabindex="0" id="example1_previous">
+                                                                                        <a href="#">Previous</a>
+                                                                                    </li><li class="paginate_button active" aria-controls="example1" tabindex="0"><a href="#">1</a></li>
+                                                                                    <li class="paginate_button next disabled" aria-controls="example1" tabindex="0" id="example1_next"><a href="#">Next</a></li>
+                                                                                </ul></div>*@
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div> <!-- col-sm-12 -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+
+
+
+                                                </div>
+                                                <!-- Tab tabComunidades -->
+                                                <div class="tab-pane p-3" id="tabComunidades" role="tabpanel">
+                                                    <div class="row">
+                                                        <div class="card m-b-20">
+                                                            <div class="card-body">
+
+                                                                <div class="row">
+                                                                    <div class="col-sm-12">
+
+                                                                        <h5 class="page-header">
+                                                                            <a class="btn btn-primary" data-toggle="modal" href="#modalComunidad">
+                                                                                <i class="fa fa-plus"></i>
+                                                                                Agregar Comunidad
+                                                                            </a>
+                                                                        </h5>
+
+                                                                        <div id="hide-table">
+                                                                            <div id="example1_wrapper" class="dataTables_wrapper form-inline no-footer">
+                                                                                @*<div class="dt-buttons">
+                                                                                        <a class="btn btn-secondary buttons-copy buttons-html5" tabindex="0" aria-controls="example1"><span>Copy</span></a>
+                                                                                        <a class="btn btn-secondary buttons-excel buttons-html5" tabindex="0" aria-controls="example1"><span>Excel</span></a>
+                                                                                        <a class="btn btn-secondary buttons-csv buttons-html5" tabindex="0" aria-controls="example1"><span>CSV</span></a>
+                                                                                        <a class="btn btn-secondary buttons-pdf buttons-html5" tabindex="0" aria-controls="example1"><span>PDF</span></a>
+                                                                                    </div>*@
+                                                                                @*<div id="example1_filter" class="dataTables_filter">
+                                                                                        <label>Search:<input type="search" class="form-control input-sm" placeholder="" aria-controls="example1"></label>
+                                                                                    </div>*@
+                                                                                <table id="example1" class="table table-striped table-bordered table-hover dataTable no-footer" role="grid" aria-describedby="example1_info">
+                                                                                    <thead>
+                                                                                    <tr role="row">
+                                                                                        <th class="col-lg-1 sorting_asc" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-sort="ascending" aria-label="#: activate to sort column descending" style="width: 98.0218px;">#</th>
+                                                                                        <th class="col-lg-3 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nombre Del Examen: activate to sort column ascending" style="width: 330.022px;">Centro Poblado</th>
+                                                                                        <th class="col-lg-3 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Fecha: activate to sort column ascending" style="width: 330.022px;">Comunidad</th>
+                                                                                        <th class="col-lg-3 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Nota: activate to sort column ascending" style="width: 331.022px;">Cantidad de Personas beneficiadas</th>
+                                                                                        <th class="col-lg-2 sorting" tabindex="0" aria-controls="example1" rowspan="1" colspan="1" aria-label="Acción: activate to sort column ascending" style="width: 215.022px;">Acción</th>
+                                                                                    </tr>
+                                                                                    </thead>
+                                                                                    <tbody>
+
+                                                                                    <tr role="row" class="odd">
+                                                                                        <td data-title="#" class="sorting_1">
+                                                                                            1
+                                                                                        </td>
+                                                                                        <td data-title="Centro Poblado">
+                                                                                            occoro
+                                                                                        </td>
+                                                                                        <td data-title="Comunidad">
+                                                                                            Taracay
+                                                                                        </td>
+
+                                                                                        <td data-title="Cantidad de Personas beneficiadas">
+                                                                                            1200
+                                                                                        </td>
+                                                                                        <td data-title="Acción">
+                                                                                            <a href="" class="btn btn-warning btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+                                                                                            <a href="" onclick="return confirm('Estas apunto de eliminar un registro,  ¿Estás seguro de eliminar estos datos?')" class="btn btn-danger btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Eliminar"><i class="fa fa-plus-circle"></i></a>
+
+                                                                                        </td>
+                                                                                    </tr>
+
+
+                                                                                    </tbody>
+                                                                                </table>
+                                                                                @*<div class="dataTables_info" id="example1_info" role="status" aria-live="polite">Showing 1 to 5 of 5 entries</div>
+                                                                                <div class="dataTables_paginate paging_simple_numbers" id="example1_paginate"><ul class="pagination">
+                                                                                    <li class="paginate_button previous disabled" aria-controls="example1" tabindex="0" id="example1_previous">
+                                                                                        <a href="#">Previous</a>
+                                                                                    </li><li class="paginate_button active" aria-controls="example1" tabindex="0"><a href="#">1</a></li>
+                                                                                    <li class="paginate_button next disabled" aria-controls="example1" tabindex="0" id="example1_next"><a href="#">Next</a></li>
+                                                                                </ul></div>*@
+                                                                            </div>
+                                                                        </div>
+
+
+                                                                    </div> <!-- col-sm-12 -->
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                </div>
+                                                <!-- Tab tabPresupuesto -->
+                                                <div class="tab-pane p-3" id="tabPresupuesto" role="tabpanel">
+                                                    <p class="mb-0">
+                                                        Etsy mixtape wayfarers, ethical wes anderson tofu before they
+                                                        sold out mcsweeney's organic lomo retro fanny pack lo-fi
+                                                        farm-to-table readymade. Messenger bag gentrify pitchfork
+                                                        tattooed craft beer, iphone skateboard locavore carles etsy
+                                                        salvia banksy hoodie helvetica. DIY synth PBR banksy irony.
+                                                        Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh
+                                                        mi whatever gluten-free, carles pitchfork biodiesel fixie etsy
+                                                        retro mlkshk vice blog. Scenester cred you probably haven't
+                                                        heard of them, vinyl craft beer blog stumptown. Pitchfork
+                                                        sustainable tofu synth chambray yr.
+                                                    </p>
+                                                </div>
+                                                <!-- Tab tabPagos -->
+                                                <div class="tab-pane p-3" id="tabPagos" role="tabpanel">
+                                                    <p class="mb-0">
+                                                        Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+                                                        art party before they sold out master cleanse gluten-free squid
+                                                        scenester freegan cosby sweater. Fanny pack portland seitan DIY,
+                                                        art party locavore wolf cliche high life echo park Austin. Cred
+                                                        vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
+                                                        farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral,
+                                                        mustache readymade thundercats keffiyeh craft beer marfa
+                                                        ethical. Wolf salvia freegan, sartorial keffiyeh echo park
+                                                        vegan.
+                                                    </p>
+                                                </div>
+                                                <!-- Tab tabMesaDialogo -->
+                                                <div class="tab-pane p-3" id="tabMesaDialogo" role="tabpanel">
+                                                    <p class="mb-0">
+                                                        Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+                                                        art party before they sold out master cleanse gluten-free squid
+                                                        scenester freegan cosby sweater. Fanny pack portland seitan DIY,
+                                                        art party locavore wolf cliche high life echo park Austin. Cred
+                                                        vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
+                                                        farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral,
+                                                        mustache readymade thundercats keffiyeh craft beer marfa
+                                                        ethical. Wolf salvia freegan, sartorial keffiyeh echo park
+                                                        vegan.
+                                                    </p>
+                                                </div>
+                                                <!-- Tab tabNotas -->
+                                                <div class="tab-pane p-3" id="tabNotas" role="tabpanel">
+                                                    <p class="mb-0">
+                                                        Trust fund seitan letterpress, keytar raw denim keffiyeh etsy
+                                                        art party before they sold out master cleanse gluten-free squid
+                                                        scenester freegan cosby sweater. Fanny pack portland seitan DIY,
+                                                        art party locavore wolf cliche high life echo park Austin. Cred
+                                                        vinyl keffiyeh DIY salvia PBR, banh mi before they sold out
+                                                        farm-to-table VHS viral locavore cosby sweater. Lomo wolf viral,
+                                                        mustache readymade thundercats keffiyeh craft beer marfa
+                                                        ethical. Wolf salvia freegan, sartorial keffiyeh echo park
+                                                        vegan.
+                                                    </p>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 pad-pan-ef-2 dv-Leyend text-left">
+
+                            <span class="text-danger"> <span class="fa fa-asterisk badged-Leyend"></span> Campos obligatorios.</span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-right">
+                            <button type="button" class="btn btn-default tm14px" id="btnCancelar"><span class="glyphicon glyphicon-remove"></span> Cancelar</button>
+                            <button type="button" class="btn btn-danger tm14px" id="btnGrabar"><span class="glyphicon glyphicon-floppy-disk"></span> Grabar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Convenio-->
+<div class="modal fade" id="modalDocumentosConvenio" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Nuevo Documento de Convenio</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="" class="clearfix" method="post" enctype="multipart/form-data">
+
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m-b-10">
+
+                            <label for="txtBeneficiados" class="lbl-fe-1">Nombre del documento: <span class="text-danger"></span></label>
+
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" class="form-control txt-fe-1 inicioSinEspacios" id="txtModal_DC_NombreDocumento" name="nombre" required="">
+                            </div>
+
+                        </div>
+
+                    </div>
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 m-b-10">
+
+                            <div class="input-group image-preview" data-original-title="" title="" data-content="">
+                                <input type="text" class="form-control image-preview-filename" disabled="disabled">
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn btn-danger image-preview-clear" style="display: none; padding: 8px">
+                                        <span class="fas fa-trash-alt"></span>
+                                        Borrar
+                                    </button>
+                                    <div class="btn btn-primary image-preview-input">
+                                        <span class="far fa-file"></span>
+                                        <span class="image-preview-input-title">Subir archivo</span>
+                                        <input type="file" accept="image/png, image/jpeg, image/gif, application/pdf, application/msword, application/vnd.ms-excel, application/vnd.ms-powerpoint, text/plain, application/pdf" id="fileNuevoDocumento">
+                                    </div>
+                                </span>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-12 derechaEnviar">
+                        <button type="button" id="btnGuardarDocumentoConvenio" class="btn btn-primary pull-right">Guardar</button>
+                        <button type="button" id="btnCancelarNuevoDocumento" class="btn btn-danger pull-right">Cancelar</button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- Modal Convenio-->
+<!-- Modal Comunidad-->
+<div class="modal fade" id="modalComunidad" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title mt-0" id="myLargeModalLabel">Comunidad</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+            </div>
+            <div class="modal-body">
+                <form role="form" action="doctor/addNew" class="clearfix" method="post" enctype="multipart/form-data">
+
+
+                    <div class="row">
+                        <div class="col-12 m-b-10">
+                            <label for="cboDepartamento" class="lbl-fe-1">Departamento: <span class="text-danger"></span></label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-cursor-default"></i>
+                                    </span>
+                                </div>
+                                <select class="form-control select2" name="cboDepartamento" required="">
+                                    <option value="administrador"> HUANCAVELICA </option>
+                                    <option value="administrador">Nro 78237</option>
+                                    <option value="Edicativo">Nro 78237</option>
+                                    <option value="Social">solicitud población de pampas </option>
+                                    <option value="Comunicación">Nro 78237</option>
+                                </select>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+
+                        <div class="col-12 m-b-10">
+                            <label for="cboProvincia" class="lbl-fe-1">Provincia: <span class="text-danger"></span></label>
+
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-cursor-default"></i>
+                                    </span>
+                                </div>
+                                <select class="form-control select2" name="cboProvincia" required="">
+                                    <option value="administrador"> Seleccione </option>
+                                    <option value="administrador">TAYACAJA</option>
+                                    <option value="Edicativo">Nro 78237</option>
+                                    <option value="Social">solicitud población de pampas </option>
+                                    <option value="Comunicación">Nro 78237</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12 m-b-10">
+
+                            <label for="cboDistrito" class="lbl-fe-1">Distrito: <span class="text-danger"></span></label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-cursor-default"></i>
+                                    </span>
+                                </div>
+                                <select class="form-control select2" name="cboDistrito" required="">
+                                    <option value="administrador"> Seleccione </option>
+                                    <option value="administrador">COLCABAMBA</option>
+                                    <option value="Edicativo">Nro 78237</option>
+                                    <option value="Social">solicitud población de pampas </option>
+                                    <option value="Comunicación">Nro 78237</option>
+                                </select>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12 m-b-10">
+
+                            <label for="cboCentroPoblado" class="lbl-fe-1">Centro Poblado: <span class="text-danger"></span></label>
+
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-cursor-default"></i>
+                                    </span>
+                                </div>
+                                <select class="form-control select2" name="cboCentroPoblado" required="">
+                                    <option value="administrador"> Seleccione </option>
+                                    <option value="administrador">COLCABAMBA</option>
+                                    <option value="Edicativo">SAN LUIS DE ESTANQUE</option>
+                                    <option value="Social">IQUIUZA</option>
+                                    <option value="Comunicación">RUNDOVILCA</option>
+                                </select>
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12 m-b-10">
+
+                            <label for="cboComunidad" class="lbl-fe-1">Comunidad: <span class="text-danger"></span></label>
+
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </span>
+                                </div>
+                                <select class="form-control select2" name="cboComunidad" required="">
+                                    <option value="administrador"> Seleccione </option>
+                                    <option value="administrador">Nro 78237</option>
+                                    <option value="Edicativo">Nro 78237</option>
+                                    <option value="Social">solicitud población de pampas </option>
+                                    <option value="Comunicación">Nro 78237</option>
+                                </select>
+
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-12 m-b-10">
+                            <label for="cboComunidad" class="lbl-fe-1">Persona beneficiadas: <span class="text-danger"></span></label>
+                            <div class="input-group">
+                                <div class="input-group-append">
+                                    <span class="input-group-text">
+                                        <i class="mdi mdi-lead-pencil"></i>
+                                    </span>
+                                </div>
+
+                                <input type="text" class="form-control txt-fe-1 inicioSinEspacios" id="txtPersonaBeneficiaria" name="txtPersonaBeneficiaria" required="">
+                            </div>
+
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group col-md-12 derechaEnviar">
+                        <button type="submit" name="submit" class="btn btn-primary pull-right">Guardar</button>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div>
+<!-- Modal Convenio-->
+
+
+<script>
+
+    //variables
+    $('#txtFexhaInicio').datepicker();
+    $('#txtFechaFin').datepicker();
+
+    const btnGuardarDocumentoConvenio = document.getElementById('btnGuardarDocumentoConvenio');
+    const tbGrillaDocumentoConvenio = document.getElementById('tbGrillaDocumentoConvenio');
+
+
+
+
+    var lista = [];
+
+    //Listeners
+    CargarEventListener();
+    function CargarEventListener() {
+
+        btnGuardarDocumentoConvenio.addEventListener('click', AgregarDocumento);
+    };
+
+
+
+
+
+
+    //funciones
+    function AgregarDocumento(e) {
+        e.preventDefault;
+
+        const input = document.getElementById('fileNuevoDocumento');
+        var file = input.files[0];
+
+        var model = {
+            
+            nombre: file.name,
+            archivo: input.files[0],
+            fecha: fecha()
+        };
+
+        lista.push(model);
+        refrescarGrilla();
+        limpiarDocumentoConvenio();
+
+        $('#modalDocumentosConvenio').modal('hide')
+    };
+
+
+    function refrescarGrilla() {
+
+        tbGrillaDocumentoConvenio.innerHTML = '';
+        lista.forEach(RecorrerGrilla);
+
+        //document.getElementById("demo").innerHTML = sum;
+    };
+
+    function limpiarDocumentoConvenio() {
+        $('.image-preview-filename').val("");
+        $('.image-preview-clear').hide();
+        $('.image-preview-input input:file').val("");
+        $(".image-preview-input-title").text("Subir archivo");
+        $("#txtModal_DC_NombreDocumento").val("");
+    };
+
+
+
+    $(function () {
+
+        $('.image-preview-clear').click(function () {
+            //debugger;
+            //$('.image-preview').attr("data-content", "").popover('hide');
+            $('.image-preview-filename').val("");
+            $('.image-preview-clear').hide();
+            $('.image-preview-input input:file').val("");
+            $(".image-preview-input-title").text("Subir archivo");
+        });
+        // Create the preview image
+        $(".image-preview-input input:file").change(function () {
+
+            var file = this.files[0];
+            var reader = new FileReader();
+            // Set preview image into the popover data-content
+            reader.onload = function (e) {
+                $(".image-preview-input-title").text("Subir archivo");
+                $(".image-preview-clear").show();
+                $(".image-preview-filename").val(file.name);
+            }
+            reader.readAsDataURL(file);
+        });      
+
+        $('#btnCancelarNuevoDocumento').click(function (e) {
+            e.preventDefault;
+            console.log('btnCancelarNuevoDocumento');
+        });
+
+    });
+
+    function RecorrerGrilla(item, index, arr) {
+        //arr[index] = item * 10;
+        //console.log('----------------');
+        //console.log(item.nombre);
+        //console.log(item.fecha);
+        //console.log(index);
+        //console.log(arr[index].nombre);
+        //console.log('----------------');
+
+        var row = document.createElement("tr");
+        row.innerHTML = `<td data-title="#" class="sorting_1">
+             ${index} 
+             </td> <td data-title="Nombre">
+            ${item.nombre}
+            </td> <td data-title="Fecha">
+             ${item.fecha}
+            </td> <td data-title="Nota"> <a href="" class="btn btn-primary btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Archivo"><i class="fa fa-clipboard-list"></i></a>
+            </td><td data-title="Acción"><a href="" class="btn btn-warning btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Editar"><i class="fa fa-edit"></i></a>
+            <a href="" onclick="return confirm('Estas apunto de eliminar un registro, ¿Estás seguro de eliminar estos datos ? ') " class="btn btn-danger btn-xs mrg" data-placement="top" data-toggle="tooltip" data-original-title="Eliminar"><i class="fa fa-plus-circle"></i></a> </td>`;
+
+        tbGrillaDocumentoConvenio.appendChild(row);
+
+
+    }
+
+
+    function fecha() {
+        var f = new Date();
+        return f.getDate() + "/" + (f.getMonth() + 1) + "/" + f.getFullYear()
+
+    }
+
+</script>

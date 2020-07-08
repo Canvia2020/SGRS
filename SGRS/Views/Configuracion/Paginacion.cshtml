@@ -1,0 +1,161 @@
+﻿
+
+@using SGRS.Helper.Constantes;
+
+<style>
+    .tabla {
+        clear: both;
+        margin-top: 6px !important;
+        margin-bottom: 6px !important;
+        max-width: none !important;
+        border-collapse: separate !important;
+        border-spacing: 0;
+        border: 1px solid #dee2e6;
+        margin-bottom: 1rem;
+        color: #212529;
+    }
+
+        .tabla tbody tr {
+            background-color: #f8f9fa;
+        }
+
+        .tabla tbody td {
+            border-left-width: 0;
+            border-bottom-width: 0;
+        }
+
+        .tabla > tbody > tr > td {
+         
+            padding-top: 10px;
+            padding-left: 12px;
+            padding-right: 12px;
+            padding-bottom: 0px;
+        }
+
+        /*.tabla td, .tabla th {
+            border: 1px solid #dee2e6;
+        }*/
+        .tabla thead th {
+            vertical-align: bottom;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .tabla thead td, .tabla thead th {
+            border-bottom-width: 2px;
+            border: 1px solid #dee2e6;
+
+        }
+        .tabla td, .tabla th {
+            padding: .75rem;
+            vertical-align: top;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .tabla tbody td, .tabla tbody th {
+            border: 1px solid #dee2e6;
+        }
+
+    .botonesAccion {
+        padding: 3px 5px;
+        cursor: pointer;
+    }
+
+</style>
+
+
+
+@model GMD.CustomHtmlHelpers.HtmlGenericGrid.GMDGridModel<SGRS.Entity.Response.ParametroResponse>
+@{
+    var grid = new GMDGrid<SGRS.Entity.Response.ParametroResponse>("ggmParametro", Model) { callBackMethod = "refrescarggmParametro", _overflowx = true, tableHtmlAttributes = new { @class = "grid-gmd tabla" } };
+    grid.columnCollection.addColumn(_headerText: "Nombre", _filterKey: "_Nombre", _isFilterable: false, _isSortable: true, _format:
+@<text><div><span title="@item.Nombre">@Utils.SubstringCadena(item.Nombre, 30)</span></div></text>, _htmlAttributes: new { @width = "15%" });
+grid.columnCollection.addColumn(_headerText: "Nombre Corto", _filterKey: "_NombreCorto", _isFilterable: false, _isSortable: true, _format:
+@<text><div><span title="@item.NombreCorto">@Utils.SubstringCadena(item.NombreCorto, 30)</span></div></text>, _htmlAttributes: new { @width = "12%" });
+grid.columnCollection.addColumn(_headerText: "Descripción", _filterKey: "_Descripcion", _isFilterable: false, _isSortable: true, _format:
+@<text><div><span title="@item.Descripcion">@Utils.SubstringCadena(item.Descripcion, 30)</span></div></text>, _htmlAttributes: new { @width = "18%" });
+grid.columnCollection.addColumn(_headerText: "Valor", _filterKey: "_Valor", _isFilterable: false, _isSortable: true, _format:
+@<text><div><span title="@item.Valor">@item.Valor</span></div></text>, _htmlAttributes: new { @width = "3%", @align = "center" });
+grid.columnCollection.addColumn(_headerText: "Valor 2", _filterKey: "_DescripcionNotificacion", _isFilterable: false, _isSortable: true, _format:
+@<text>
+    <div>
+        <span title="@item.DescripcionNotificacion">@Utils.SubstringCadena(item.DescripcionNotificacion, 30)</span>
+    </div>
+</text>, _htmlAttributes: new { @width = "15%" });
+grid.columnCollection.addColumn(_headerText: "Valor Fecha", _filterKey: "_ValorFechaDescripcion", _isFilterable: false, _isSortable: true, _format:
+@<text><div><span title="@item.ValorFechaDescripcion">@item.ValorFechaDescripcion</span></div></text>, _htmlAttributes: new { @width = "12%" });
+
+grid.columnCollection.addColumn(_headerText: "Estado", _filterKey: "_EstadoRegistroDescripcion", _isFilterable: false, _isSortable: true, _format:
+@<text><div><span title="@item.EstadoRegistroDescripcion">@item.EstadoRegistroDescripcion</span></div></text>, _htmlAttributes: new { @width = "10%" });
+grid.columnCollection.addColumn(_headerText: "Acciones", _isFilterable: false, _isSortable: false, _format:
+@<text>
+    <div>
+
+            <a href="#" id="btnDetalle_@item.CodigoParametro" class="btn btn-secondary  waves-effect botonesAccion" onclick="mostrarElementos(@item.CodigoParametro)">
+                <span title="Ver Elementos" class="mdi mdi-apps btnDetalleVer"></span>
+            </a>
+        
+
+            <a href="#" id="btnEditar_@item.CodigoParametro"  class="btn btn-secondary  waves-effect botonesAccion" onclick="editarParametro(@item.CodigoParametro)">
+                <span title="Editar" class="mdi mdi-border-color btnEditar"></span>
+            </a>
+        
+    </div>
+</text>, _htmlAttributes: new { @width = "5%" });
+}
+@grid.GetHtml()
+
+
+
+
+<script type="text/javascript">
+
+
+    function mostrarElementos(codigoParametro) {
+        debugger;
+        $("#divLayoutBody").load(
+            "/Configuracion/Index/",
+            {
+                controlador: "Configuracion",
+                accion: "Index",
+                codigoParametro: codigoParametro,
+                callBackMethod: "refrescarggmParametro"
+            }
+        )
+    };
+
+    //function editarParametro(codigoParametro) {
+    //    $("#divLayoutBody").load(
+    //        "/Configuracion/Mantenimiento/",
+    //        {
+    //            controlador: "Configuracion",
+    //            accion: "Mantenimiento",
+
+    //            codigoParametro: codigoParametro,
+    //            DBIdCodigoParametro: $('#hdCodigoParametroPadre').val(),
+    //            DBIdCodigoPadre: $('#hdCodigoPadre').val(),
+    //            callBackMethod: "refrescarggmParametro"
+    //        }
+    //    )
+    //}
+
+    
+    function editarParametro(codigoParametro) {
+        debugger;
+        $("#divLayoutBody").load(
+            "/Configuracion/Mantenimiento/",
+            {
+                controlador: "Configuracion",
+                accion: "Mantenimiento",
+                estado:"1",
+                codigoParametro: codigoParametro,
+                DBIdCodigoParametro: $('#DBIdCodigoParametro').val(),
+                DBIdCodigoPadre: $('#DBIdCodigoPadre').val(),
+                callBackMethod: "refrescarggmParametro"
+            }
+        )
+    }
+
+
+
+
+</script>
+

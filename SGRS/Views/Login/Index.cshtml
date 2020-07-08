@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+    
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <title>SGRS</title>
+    <meta content="Sistema de Gestion de Responsabilidad Social" name="description" />
+    <meta content="ElectroPeru" name="author" />
+    <link rel="shortcut icon" href="~/images/favicon.ico">
+    @Styles.Render("~/Content/css")
+    
+</head>
+
+<body>
+
+    <!-- Begin page -->
+    <div class="wrapper-page">
+
+        <div class="card">
+            <div class="card-body">
+
+                <h3 class="text-center m-0">
+                    <a href="/dashboard" class="logo logo-admin">
+                        <img src="~/images/LogoElectroPeru.png" height="90" alt="logo">
+                    </a>
+                </h3>
+
+                <div class="p-3">
+                    <h4 class="text-muted font-18 m-b-5 text-center">Bienvenido</h4>
+                    <p class="text-muted text-center">Sistema de gestión de la responsabilidad social .</p>
+
+                    <form class="form-horizontal m-t-30" action="/dashboard">
+
+                        <div class="form-group">
+                            <label for="username">Usuario :</label>
+                            <input type="text" class="form-control" id="username" placeholder="Ingrese Usuario">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="userpassword">Password :</label>
+                            <input type="password" class="form-control" id="userpassword" placeholder="Ingrese Password">
+                        </div>
+
+                        <div class="form-group row m-t-20">
+                            <div class="col-6">
+                               
+                            </div>
+                            <div class="col-6 text-right">
+                                <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
+                            </div>
+                        </div>
+
+                        <div class="form-group m-t-10 mb-0 row">
+                          
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="m-t-40 text-center">
+          
+            <p> Electroperu  <i class="mdi mdi-apple-keyboard-command"></i> © 2020 Canvia</p>
+        </div>
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+</body>
+</html>

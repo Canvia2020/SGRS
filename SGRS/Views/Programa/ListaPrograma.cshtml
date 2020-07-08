@@ -1,0 +1,136 @@
+﻿
+
+<link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Programa</a></li>
+                <li class="breadcrumb-item active">Lista de Programas</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Lista de Programas</h4>
+                <p class="card-title-desc">
+                    <button class="btn btn-primary" id="btnNuevoPrograma">Nuevo</button>
+                </p>
+
+
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Programa</th>
+                            <th>Descripción</th>
+                            <th>Estado</th>
+
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
+                            <td>Accountant</td>
+                            <td>Tokyo</td>
+                            <td>33</td>
+
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="sorting_1 dtr-control">Angelica Ramos</td>
+                            <td>Chief Executive Officer (CEO)</td>
+                            <td>London</td>
+                            <td>47</td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">Ashton Cox</td>
+                            <td>Junior Technical Author</td>
+                            <td>San Francisco</td>
+                            <td>66</td>
+
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="sorting_1 dtr-control">Bradley Greer</td>
+                            <td>Software Engineer</td>
+                            <td>London</td>
+                            <td>41</td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="sorting_1 dtr-control">Brenden Wagner</td>
+                            <td>Software Engineer</td>
+                            <td>San Francisco</td>
+                            <td>28</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+
+<!-- Prueba -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#datatable").DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "anterior",
+                    "next": "posterior"
+                },
+                "search": "Buscar:",
+
+
+            },
+            "search": "Buscar:",
+            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+
+        });
+
+        $('#btnNuevoPrograma').click(function () {
+          
+            $.post('/Programa/NuevoPrograma', {estado:'0'}, function(response){ 
+               
+                $("#divLayoutBody").html(response);
+            });
+        });
+    
+    });
+
+
+   
+</script>
+
