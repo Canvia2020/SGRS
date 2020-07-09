@@ -28,7 +28,8 @@ namespace SGRS
                 "~/Content/bootstrap.min.css",
                 "~/Content/metismenu.min.css",
                 "~/Content/icons.css",
-                "~/Content/style.css", "~/Content/app.css"));
+                "~/Content/style.css", 
+                "~/Content/app.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/ExtencionesCSS").Include(           
             "~/Scripts/plugins/sweet-alert2/sweetalert2.css"

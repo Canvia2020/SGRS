@@ -1934,7 +1934,8 @@ button:focus {
         }
 
 .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
-    background: #7a6fbe;
+    /*background: #7a6fbe;*/
+    background: #868e96;
 }
 
 #accordion .card-header {
