@@ -27,6 +27,15 @@
         /*background: #7a6fbe;*/
         background: #868e96;
     }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card-header {
+        background-color: #2364A6;
+        color: #ffffff;
+    }
 </style>
 
 
@@ -58,7 +67,7 @@
                     <div class="col-md-6">
                         <div class="form-group">
                             <label>Id</label>
-                            <input type="text" class="form-control" required="" placeholder="Type something">
+                            <input type="text" class="form-control">
                         </div>
                     </div>
                     <div class="col-md-6">
@@ -329,7 +338,7 @@
                                         <div class="col-md-6">
 
                                             <div class="form-group row">
-                                                <label class="col-sm-2 col-form-label">Representante</label>
+                                                <label class="col-sm-3 col-form-label">Representante</label>
                                                 <div class="col-sm-7">
                                                     <select class="form-control">
                                                         <option>Seleccionar</option>
@@ -345,6 +354,7 @@
                                                 </div>
 
                                                 <button type="button" class="btn btn-primary">Agregar</button>
+
                                             </div>
 
                                             <div class="row">
@@ -456,18 +466,30 @@
                     <div class="card m-b-30">
                         <h4 class="card-header font-16 mt-0">Agregar Actas</h4>
                         <div class="card-body">
+
                             <div class="row">
                                 <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nombre del Archivo</label>
+                                        <input class="form-control" type="text" value="" id="txtActas">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+
+                                <div class="col-md-6">
+
 
                                     <div class="form-group row">
                                         <div class="col-md-8">
                                             <input type="file" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Cargar Archivo" data-iconName="fas fa-folder-open">
                                         </div>
-                                      
+
                                         <div class="col-md-4">
                                             <button type="button" class="btn btn-primary">Agregar</button>
                                         </div>
-                                        
+
                                     </div>
 
                                     <div class="row">
@@ -521,18 +543,13 @@
 
             </div>
 
-            @*<div class="form-group">
-                    <div class="col-md-6 offset-md-2">
-                        <div class="form-group">
-                            <input type="file" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Cargar Archivo" data-iconName="fas fa-folder-open">
-                        </div>
-                    </div>
 
-                </div>*@
+            <div class="row">
+                <div class="col-lg-12">
+                    <button class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </div>
 
-
-
-            @*<button class="btn btn-primary" id="btnGuardar">Guardar</button>*@
 
 
         </div>
@@ -547,7 +564,7 @@
 
     $('#btnRegresar').click(function () {
 
-        $.post('/Requerimiento/ListaRequerimiento', null, function (response) {
+        $.post('/Requerimiento/ListaRequerimiento', function (response) {
 
             $("#divLayoutBody").html(response);
         });
@@ -583,7 +600,7 @@
             "paging": false,
             "ordering": false,
             "info": false,
-            "search": false
+            "searching": false
 
         });
 
