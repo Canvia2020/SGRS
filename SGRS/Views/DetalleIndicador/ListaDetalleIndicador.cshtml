@@ -1,0 +1,147 @@
+﻿
+
+
+
+
+
+<link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Detallle Indicador</a></li>
+                <li class="breadcrumb-item active">Lista de Indicadores</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Lista Indicadores</h4>
+                <p class="card-title-desc">
+
+                    <table id="datatable" class="table table-bordered dt-responsive">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Plan</th>
+                                <th>Programa</th>
+                                <th>Componente</th>
+                                <th>Proyecto</th>
+                                <th>Indicador</th>
+                                <th>Acción</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr role="row" class="odd">
+                                <td class="dtr-control sorting_1" tabindex="0">01</td>
+                                <td>Plan 2020</td>
+                                <td>Programa 01 </td>
+                                <td>Componente 01</td>
+                                <td>Proyecto 01</td>
+                                <td>Indicador 01</td>
+
+                                <td>
+                                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                </td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1 dtr-control">02</td>
+                                <td>Plan 2020</td>
+                                <td>Programa 01 </td>
+                                <td>Componente 01</td>
+                                <td>Proyecto 01</td>
+                                <td>Indicador 02</td>
+
+                                <td>
+                                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                </td>
+
+                            </tr>
+                            <tr role="row" class="odd">
+                                <td class="dtr-control sorting_1" tabindex="0">03</td>
+                                <td>Plan 2020</td>
+                                <td>Programa 01 </td>
+                                <td>Componente 01</td>
+                                <td>Proyecto 01</td>
+                                <td>Indicador 03</td>
+
+                                <td>
+                                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                </td>
+                            </tr>
+                            <tr role="row" class="even">
+                                <td class="sorting_1 dtr-control">04</td>
+                                <td>Plan 2020</td>
+                                <td>Programa 01 </td>
+                                <td>Componente 01</td>
+                                <td>Proyecto 01</td>
+                                <td>Indicador 04</td>
+
+                                <td>
+                                    <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+
+
+                </p>
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+
+<!-- Prueba -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#datatable").DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "anterior",
+                    "next": "posterior"
+                },
+                "search": "Buscar:",
+
+
+            },
+            "search": "Buscar:",
+            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+
+        });
+
+        $('#btnNuevoDetalleIndicador').click(function () {
+
+            $.ajax({
+                url: "/DetalleIndicador/NuevoDetalleIndicador",
+                dataType: "html",
+                success: function (html) {
+                    $("#divLayoutBody").html(html);
+
+                }
+            });
+
+        });
+
+    });
+
+
+
+</script>
+

@@ -3,6 +3,8 @@
 
 
 
+
+
 <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
 <div class="row">
@@ -10,8 +12,8 @@
         <div class="page-title-box">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Centro de Salud</a></li>
-                <li class="breadcrumb-item active">Lista de Centros de Salud</li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Convenio</a></li>
+                <li class="breadcrumb-item active">Lista de Convenios</li>
             </ol>
         </div>
     </div>
@@ -21,9 +23,9 @@
         <div class="card">
             <div class="card-body">
 
-                <h4 class="card-title">Lista de Centros de Salud</h4>
+                <h4 class="card-title">Lista de Convenios</h4>
                 <p class="card-title-desc">
-                    <button class="btn btn-primary" id="btnNuevoCentroDeSalud">Nuevo</button>
+                    <button class="btn btn-primary" id="btnNuevoRequerimiento">Nuevo</button>
                 </p>
 
             </div>
@@ -41,20 +43,20 @@
 <script>
     $(document).ready(function () {
 
-        $('#btnNuevoCentroDeSalud').click(function () {
+        $('#btnNuevoRequerimiento').click(function () {
 
             $.ajax({
-                url: "/CentrosSalud/NuevoCentroDeSalud",
+                url: "/Convenio/NuevoConvenio",
                 dataType: "html",
                 success: function(html) {
                     $("#divLayoutBody").html(html);
-             
+
                 }
             });
 
         });
 
-       
+
 
 
     });

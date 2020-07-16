@@ -6,13 +6,13 @@ using System.Web.Mvc;
 
 namespace SGRS.Controllers
 {
-    public class ConvenioController : Controller
+    public class ActividadesController : Controller
     {
-        public ActionResult ListaConvenio()
+        public ActionResult ListaActividades()
         {
             return PartialView();
         }
-        public ActionResult NuevoConvenio()
+        public ActionResult NuevoActividades()
         {
             return PartialView();
         }

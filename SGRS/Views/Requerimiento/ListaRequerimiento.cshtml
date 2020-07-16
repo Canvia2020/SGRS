@@ -3,6 +3,8 @@
 
 
 <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<link href="~/plugins/grillaSelect/dataTables.checkboxes.css" rel="stylesheet" />
+
 
 <div class="row">
     <div class="col-sm-12">
@@ -26,7 +28,72 @@
                 </p>
 
 
-                
+                <table id="datatable" class="table table-bordered dt-responsive">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>Requerimiento</th>
+                            <th>Tipo de Requerimiento</th>
+                            <th>Plan</th>
+                            <th>Programa</th>
+                            <th>Componente</th>
+                            <th>Proyecto</th>
+                            <th>Fecha de Regsitro</th>
+                            <th>Agrupación</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <th>Requerimiento</th>
+                            <th>Tipo de Requerimiento</th>
+                            <th>Plan</th>
+                            <th>Programa</th>
+                            <th>Componente</th>
+                            <th>Proyecto</th>
+                            <th>Fecha de Regsitro</th>
+                            <th>MT001</th>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <th>Requerimiento</th>
+                            <th>Tipo de Requerimiento</th>
+                            <th>Plan</th>
+                            <th>Programa</th>
+                            <th>Componente</th>
+                            <th>Proyecto</th>
+                            <th>Fecha de Regsitro</th>
+                            <th>MT001</th>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <th>Requerimiento</th>
+                            <th>Tipo de Requerimiento</th>
+                            <th>Plan</th>
+                            <th>Programa</th>
+                            <th>Componente</th>
+                            <th>Proyecto</th>
+                            <th>Fecha de Regsitro</th>
+                            <th>MT002</th>
+                        </tr>
+
+
+                    </tbody>
+                   
+                </table>
+
+                @*<hr>
+
+                <p>Press <b>Submit</b> and check console for URL-encoded form data that would be submitted.</p>*@
+
+                <p><button>Agrupar</button></p>
+
+                @*<p><b>Selected rows data:</b></p>
+                <pre id="example-console-rows"></pre>
+
+                <p><b>Form data as submitted to the server:</b></p>
+                <pre id="example-console-form"></pre>*@
+
 
 
             </div>
@@ -39,11 +106,12 @@
 <!-- Prueba -->
 <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
-
+<script src="~/plugins/grillaSelect/dataTables.checkboxes.min.js"></script>
 
 <script>
-    $(document).ready(function () {
+ 
 
+    $(document).ready(function () {
 
         $('#btnNuevoRequerimiento').click(function () {
 
@@ -53,6 +121,53 @@
             });
         });
 
+        var table = $('#datatable').DataTable({
+            'columnDefs': [
+                {
+                    'targets': 0,
+                    'checkboxes': {
+                        'selectRow': true
+                    }
+                }
+            ],
+            'select': {
+                'style': 'multi'
+            },
+            'order': [[1, 'asc']]
+        });
+
+        //// Handle form submission event
+        //$('#frm-example').on('submit', function (e) {
+        //    var form = this;
+
+        //    var rows_selected = table.column(0).checkboxes.selected();
+
+        //    // Iterate over all selected checkboxes
+        //    $.each(rows_selected, function (index, rowId) {
+        //        // Create a hidden element
+        //        $(form).append(
+        //            $('<input>')
+        //                .attr('type', 'hidden')
+        //                .attr('name', 'id[]')
+        //                .val(rowId)
+        //        );
+        //    });
+
+        //    // FOR DEMONSTRATION ONLY
+        //    // The code below is not needed in production
+
+        //    // Output form data to a console
+        //    $('#example-console-rows').text(rows_selected.join(","));
+
+        //    // Output form data to a console
+        //    $('#example-console-form').text($(form).serialize());
+
+        //    // Remove added elements
+        //    $('input[name="id\[\]"]', form).remove();
+
+        //    // Prevent actual form submission
+        //    e.preventDefault();
+        //});
     });
 
 

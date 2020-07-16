@@ -137,14 +137,17 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Contants\Menus.cs" />
+    <Compile Include="Controllers\ActividadesController.cs" />
     <Compile Include="Controllers\CentrosSaludController.cs" />
     <Compile Include="Controllers\ComponenteController.cs" />
     <Compile Include="Controllers\ComunidadesController.cs" />
     <Compile Include="Controllers\ConfiguracionController.cs" />
     <Compile Include="Controllers\ConvenioController.cs" />
+    <Compile Include="Controllers\DetalleIndicadorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\IndicadorController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
+    <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="Controllers\ProgramaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
     <Compile Include="Controllers\RequerimientoController.cs" />
@@ -1329,6 +1332,8 @@
     <Content Include="images\default-avatar.jpg" />
     <Content Include="images\fondoInicio.jpg" />
     <Content Include="images\LogoElectroPeru.png" />
+    <Content Include="plugins\grillaSelect\dataTables.checkboxes.css" />
+    <Content Include="plugins\grillaSelect\dataTables.checkboxes.min.js" />
     <Content Include="Scripts\jQuery-2.1.4.min.js" />
     <Content Include="Js\Login.js" />
     <Content Include="Content\icons.css.map" />
@@ -2106,6 +2111,14 @@
     <Content Include="Views\CentrosSalud\NuevoCentroDeSalud.cshtml" />
     <Content Include="Views\Comunidades\ListaComunidades.cshtml" />
     <Content Include="Views\Comunidades\NuevoComunidad.cshtml" />
+    <Content Include="Views\Convenio\NuevoConvenio.cshtml" />
+    <Content Include="Views\Convenio\ListaConvenio.cshtml" />
+    <Content Include="Views\Actividades\ListaActividades.cshtml" />
+    <Content Include="Views\Actividades\NuevoActividades.cshtml" />
+    <Content Include="Views\Plan\ListaPlan.cshtml" />
+    <Content Include="Views\Plan\NuevoPlan.cshtml" />
+    <Content Include="Views\DetalleIndicador\ListaDetalleIndicador.cshtml" />
+    <Content Include="Views\DetalleIndicador\NuevoDetalleIndicador.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

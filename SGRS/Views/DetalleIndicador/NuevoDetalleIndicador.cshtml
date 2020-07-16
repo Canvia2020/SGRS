@@ -1,0 +1,300 @@
+﻿
+
+<style>
+    /*.form-control-nuevo {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid #ced4da;
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+    }
+
+    .nav-link {
+        border: 1px;
+        border-style: solid;
+    }
+
+    .nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+        /*background: #7a6fbe;
+        background: #868e96;
+    }
+    */
+    .card {
+        padding: 20px;
+    }
+
+    .card-header {
+        background-color: #2364A6;
+        color: #ffffff;
+    }
+</style>
+
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Indicadores</a></li>
+                <li class="breadcrumb-item active">Detalle Indicador</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Detalle de Indicador</h4>
+
+                <button class="btn btn-danger mb-3" id="btnRegresar">Regresar</button>
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Plan</label>
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>Plan del 2020</option>
+                            <option>Plan del 2019</option>
+                            <option>Plan del 2018</option>
+                            <option>Plan del 2027 </option>
+
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Programa</label>
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>RELACIONES COMUNITARIAS</option>
+                            <option>COMUNICACIÓN EXTERNA</option>
+                            <option>COMUNICACIÓN INTERNA</option>
+                            <option>EXTENSIÓN CULTURAL Y CIENTÍFICA </option>
+                            <option>SOLIDARIDAD SOCIAL</option>
+                            <option>DONACIONES</option>
+                            <option>SINERGIAS</option>
+
+                        </select>
+                    </div>
+                </div>
+                <!--fila 2-->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Componente</label>
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>Componente 01</option>
+                            <option>Componente 02</option>
+                            <option>Componente 03</option>
+                            <option>Componente 04</option>
+                            <option>Componente 05</option>
+                            <option>Componente 06</option>
+                            <option>Componente 07</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Proyecto</label>
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>Proyecto 01</option>
+                            <option>Proyecto 02</option>
+                            <option>Proyecto 03</option>
+                            <option>Proyecto 04</option>
+                            <option>Proyecto 05</option>
+                            <option>Proyecto 06</option>
+                            <option>Proyecto 07</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--fila 3-->
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label>Indicador</label>
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>Componente 01</option>
+                            <option>Componente 02</option>
+                            <option>Componente 03</option>
+                            <option>Componente 04</option>
+                            <option>Componente 05</option>
+                            <option>Componente 06</option>
+                            <option>Componente 07</option>
+                        </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Tipo de Indicador</label>
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>Proyecto 01</option>
+                            <option>Proyecto 02</option>
+                            <option>Proyecto 03</option>
+                            <option>Proyecto 04</option>
+                            <option>Proyecto 05</option>
+                            <option>Proyecto 06</option>
+                            <option>Proyecto 07</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!--fila 4-->
+                <div class="row">
+                    <div class="form-group col-md-3">
+                        <label for="inputEmail4">Meta</label>
+                        <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="inputPassword4">Avance</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                    </div>
+
+                    <div class="form-group col-md-3">
+                        <label for="example-search-input">Fecha Fin</label>
+
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="dd/mm/yyyy" id="txtFin" name="txtFin">
+                            <div class="input-group-append">
+                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!--fila 5-->
+                <div class="row">
+
+
+                    <div class="form-group col-md-12">
+                        <label for="inputPassword4">Descripción</label>
+                        <input type="password" class="form-control" id="inputPassword4">
+                    </div>
+
+                </div>
+
+                <div class="form-group row">
+                    <button class="btn btn-primary m-l-15" id="btnGuardar">Agregar Avance</button>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="card m-b-30">
+                            <h4 class="card-header font-16 mt-0">Avance del Indicador </h4>
+                            <div class="card-body">
+
+                                <div class="row">
+
+
+                                    <div class="col-md-6">
+
+                                        <div class="row">
+                                            <table id="datatable" class="table table-bordered dt-responsive">
+                                                <thead>
+                                                    <tr>
+                                                        <th>Id</th>
+                                                        <th>Meta</th>
+                                                        <th>Avance</th>
+                                                        <th>Fecha</th>
+                                                        <th>Descripción</th>
+                                                        <th>Acciones</th>
+                                                    </tr>
+                                                </thead>
+
+                                                <tbody>
+
+                                                    <tr role="row" class="odd">
+                                                        <td class="dtr-control sorting_1" tabindex="0">01</td>
+                                                        <td>12</td>
+                                                        <td>2</td>
+                                                        <td>12/06/2020</td>
+                                                        <td>se realizo la compra de carpetas</td>
+                                                        <td>
+                                                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                           
+                                                        </td>
+                                                    </tr>
+                                                    <tr role="row" class="even">
+                                                        <td class="sorting_1 dtr-control">02</td>
+                                                        <td>12</td>
+                                                        <td>3</td>
+                                                        <td>02/07/2020</td>
+                                                        <td>se logro realizar 3 actividades</td>
+
+                                                        <td>
+                                                            <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                         
+                                                        </td>
+
+                                                    </tr>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+
+<script>
+
+    $('#btnRegresar').click(function () {
+
+        $.ajax({
+            url: "/DetalleIndicador/ListaDetalleIndicador",
+            dataType: "html",
+            success: function (html) {
+                $("#divLayoutBody").html(html);
+
+            }
+        });
+
+
+
+    });
+    $(document).ready(function () {
+
+
+        var options = {
+            format: 'dd/mm/yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            language: 'es'
+        };
+
+        $('#txtFin').datepicker(options);
+
+    });
+
+
+</script>

@@ -127,7 +127,7 @@
                 </li>
 
 
-                <li>
+                @*<li>
                     <a href="javascript:void(0);" class="waves-effect">
 
                         <i class="mdi mdi-application">
@@ -156,7 +156,7 @@
 
 
                     </ul>
-                </li>
+                </li>*@
 
 
 
@@ -198,6 +198,10 @@
                     <ul class="submenu">
                         <li>
                             <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Plan/ListaPlan"><i class="mdi mdi-altimeter"></i><span>Plan</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
                                data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Programa/ListaPrograma"><i class="mdi mdi-altimeter"></i><span>Programa</span></a>
                         </li>
                         <li>
@@ -211,17 +215,31 @@
                         </li>
                         <li>
                             <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Actividades/ListaActividades"><i class="mdi mdi-home-variant"></i><span>Actividades</span></a>
+                        </li>
+                        <li>
+                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
                                data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Indicador/ListaIndicador"><i class="mdi mdi-chart-bar"></i><span>Indicador</span></a>
+                        </li>
+                        
+                        <li>
+                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/DetalleIndicador/ListaDetalleIndicador"><i class="mdi mdi-chart-bar"></i><span>Detalle Indicador</span></a>
                         </li>
                         <li>
                             <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
                                data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/CentrosSalud/ListaCentroDeSalud"><i class="mdi mdi-ambulance"></i><span>Centro de Salud</span></a>
                         </li>
-                        
+
                         <li>
                             <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
                                data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Comunidades/ListaComunidades"><i class="mdi mdi-home-variant"></i><span>Comunidad</span></a>
                         </li>
+                        <li>
+                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Convenio/ListaConvenio"><i class="mdi mdi-home-variant"></i><span>Convenio</span></a>
+                        </li>
+
                     </ul>
                 </li>
 

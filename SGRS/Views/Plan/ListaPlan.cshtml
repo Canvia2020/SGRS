@@ -1,0 +1,119 @@
+﻿
+
+
+<link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Plan</a></li>
+                <li class="breadcrumb-item active">Lista de Planes</li>
+            </ol>
+        </div>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Lista de Planes</h4>
+                <p class="card-title-desc">
+                    <button class="btn btn-primary" id="btnNuevoPlan">Nuevo</button>
+                </p>
+
+
+                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Plan</th>  
+                            <th>Fecha Inicio</th>   
+                            <th>Fecha Fin</th>   
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">01</td>
+                            <td>Plan anual 2020</td>
+                            <td>12/01/2020</td>
+                            <td>28/12/2020</td>
+                            <td>activo</td>
+
+                        </tr>
+                        <tr role="row" class="even">
+                            <td class="dtr-control sorting_1" tabindex="0">02</td>
+                            <td>Plan anual 2019</td>
+                            <td>02/01/2019</td>
+                            <td>12/12/2019</td>
+                            <td>activo</td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td class="dtr-control sorting_1" tabindex="0">03</td>
+                            <td>Plan anual 2019</td>
+                            <td>02/01/2018</td>
+                            <td>17/12/2018</td>
+                            <td>activo</td>
+
+                        </tr>
+                        
+                    </tbody>
+                </table>
+
+
+            </div>
+        </div>
+    </div>
+    <!-- end col -->
+</div>
+
+
+<!-- Prueba -->
+<script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+
+
+<script>
+    $(document).ready(function () {
+
+        $("#datatable").DataTable({
+            "language": {
+                "paginate": {
+                    "previous": "anterior",
+                    "next": "posterior"
+                },
+                "search": "Buscar:",
+
+
+            },
+            "search": "Buscar:",
+            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+
+        });
+
+        $('#btnNuevoPlan').click(function () {
+
+                
+            $.ajax({
+                url: "/Plan/NuevoPlan",
+                dataType: "html",
+                success: function(html) {
+                    $("#divLayoutBody").html(html);
+             
+                }
+            });
+
+        });
+
+    });
+
+
+
+</script>
+

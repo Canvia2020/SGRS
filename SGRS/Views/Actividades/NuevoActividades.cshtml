@@ -2,12 +2,13 @@
 
 
 
+
 <div class="row">
     <div class="col-sm-12">
         <div class="page-title-box">
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
-                <li class="breadcrumb-item"><a href="javascript:void(0);">Proyecto</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Actividad</a></li>
                 <li class="breadcrumb-item active">Nuevo</li>
             </ol>
         </div>
@@ -15,15 +16,12 @@
 </div>
 
 
-
-
-
 <div class="row">
     <div class="col-12">
         <div class="card">
             <div class="card-body">
 
-                <h4 class="card-title">Nuevo Proyecto</h4>
+                <h4 class="card-title">Nuevo Actividad</h4>
 
                 <button class="btn btn-danger mb-3" id="btnRegresar">Regresar</button>
 
@@ -42,8 +40,6 @@
                             <option>Plan del 2019</option>
                             <option>Plan del 2018</option>
                             <option>Plan del 2027 </option>
-                       
-
                         </select>
                     </div>
                 </div>
@@ -78,52 +74,26 @@
                         </select>
                     </div>
                 </div>
+                <div class="form-group row">
+                    <label class="col-sm-2 col-form-label">Proyecto</label>
+                    <div class="col-sm-10">
+                        <select class="form-control">
+                            <option>Seleccionar</option>
+                            <option>COMPONENTE 01</option>
+                            <option>COMPONENTE 02</option>
+                            <option>COMPONENTE 03</option>
+                            <option>COMPONENTE 04</option>
+                            <option>COMPONENTE 05</option>
+                            <option>COMPONENTE 06</option>
+                            <option>COMPONENTE 07</option>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="form-group row">
-                    <label for="example-search-input" class="col-sm-2 col-form-label">Nombre del Proyecto</label>
+                    <label for="example-search-input" class="col-sm-2 col-form-label">Actividad</label>
                     <div class="col-sm-10">
                         <input class="form-control" type="text" value="" id="txtNombre">
-                    </div>
-                </div>
-                
-
-                <div class="form-group row">
-                    <label for="example-search-input" class="col-sm-2 col-form-label">Plazo Inicio</label>
-                    <div class="col-sm-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="dd/mm/yyyy" id="txtPlazoInicio" name="txtPlazoInicio">
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="example-search-input" class="col-sm-2 col-form-label">Plazo Fin</label>
-                    <div class="col-sm-3">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="dd/mm/yyyy" id="txtPlazoFin" name="txtPlazoFin">
-
-                            <div class="input-group-append">
-                                <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="example-search-input" class="col-sm-2 col-form-label">Presupuesto</label>
-                    <div class="col-sm-2">
-                        <input class="form-control" type="text" value="" id="txtNombre">
-                    </div>
-                </div>
-
-                <div class="form-group row mb-3">
-                    <label for="example-search-input" class="col-sm-2 col-form-label">Activo</label>
-                    <div class="col-sm-3">
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input checkMasAgrende" id="chkEstado">
-
-                        </div>
                     </div>
                 </div>
 
@@ -141,7 +111,7 @@
 
     $('#btnRegresar').click(function () {
 
-        $.post('/Proyecto/ListaProyecto', null, function (response) {
+        $.post('/Actividades/ListaActividades', null, function (response) {
 
             $("#divLayoutBody").html(response);
         });
