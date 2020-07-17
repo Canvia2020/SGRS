@@ -2,9 +2,6 @@
 
 
 
-
-
-
 <link href="~/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" />
 
 <div class="row">
@@ -18,6 +15,10 @@
         </div>
     </div>
 </div>
+
+
+
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -25,8 +26,128 @@
 
                 <h4 class="card-title">Lista de Convenios</h4>
                 <p class="card-title-desc">
-                    <button class="btn btn-primary" id="btnNuevoRequerimiento">Nuevo</button>
+                    <button class="btn btn-primary" id="btnNuevoConvenio">Nuevo</button>
                 </p>
+
+
+                <table id="datatable" class="table table-bordered dt-responsive">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Requerimiento</th>
+                            <th>Descripción</th>
+                            <th>Personas beneficiadas</th>
+                            <th>F.Inicio</th>
+                            <th>F.Fin</th>
+                            <th>Cant. Adendas</th>
+                            <th>Activo</th>
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr role="row" class="odd">
+                            <td>01</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>02</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>03</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>04</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>05</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>06</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        <tr role="row" class="odd">
+                            <td>07</td>
+                            <td>Requerimiento</td>
+                            <td>Descripción</td>
+                            <td>Personas beneficiadas</td>
+                            <td>F.Inicio</td>
+                            <td>F.Fin</td>
+                            <td>Cant. Adendas</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
 
             </div>
         </div>
@@ -39,29 +160,28 @@
 <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 
-
+<script src="~/Js/DataTableSGRS.js"></script>
 <script>
     $(document).ready(function () {
 
-        $('#btnNuevoRequerimiento').click(function () {
 
+        $('#btnNuevoConvenio').click(function () {
+            alert('prueba');
             $.ajax({
                 url: "/Convenio/NuevoConvenio",
                 dataType: "html",
-                success: function(html) {
+                success: function (html) {
                     $("#divLayoutBody").html(html);
 
                 }
             });
-
         });
-
-
-
 
     });
 
 
 
 </script>
+
+
 

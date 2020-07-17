@@ -61,252 +61,104 @@
         <div id="sidebar-menu">
             <!-- Left Menu Start -->
             <ul class="metismenu" id="side-menu">
-                <li class="menu-title">Main</li>
-                <li>
-                    <a href="/" class="waves-effect">
-                        <i class="mdi mdi-view-dashboard"></i><span class="badge badge-primary badge-pill float-right">2</span> <span> Dashboard </span>
-                    </a>
-                </li>
-                @*<li>
-            <a href="@Url.Action("Calendar", "Dashboard")" class="waves-effect"><i class="mdi mdi-calendar-check"></i><span> Calendar </span></a>
-        </li>*@
 
-                @*<li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-email-outline"></i><span> Email <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-                <li><a href="/email/inbox">Inbox</a></li>
-                <li><a href="/email/read">Email Read</a></li>
-                <li><a href="/email/compose">Email Compose</a></li>
-            </ul>
-        </li>*@
-
-
-                <li class="menu-title">Gestiones</li>
-
-                @*<li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-altimeter"></i><span> Solicitud <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-                <li><a href="/pages/login">Registro</a></li>
-                <li><a href="/pages/register">Consulta</a></li>
-
-            </ul>
-        </li>*@
-
-                @*<li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-account-location"></i><span> Mesa de Ayuda <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-                <li>
-                    <a href="javascript:void(0);" class="waves-"><i class="mdi mdi-account-location"></i><span> Registro<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-
-                    <ul class="submenu">
-                        <li><a href="/pages/login">Datos de la Mesa de Dialogo y la Pestaña Actas </a></li>
-                        <li><a href="/pages/register">Participantes</a></li>
-                        <li><a href="/pages/register">Solicitud de Apoyo</a></li>
-                        <li><a href="/pages/register">Acuerdos</a></li>
-                    </ul>
-                </li>
-
-                <li>
-                    <a href="javascript:void(0);" class="waves-"><i class="mdi mdi-account-search"></i><span> Consulta <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                </li>
-
-            </ul>
-        </li>*@
-
-
-
+                <li class="menu-title">Gestión</li>
                 <li>
                     <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
                        data-ajax-mode="replace"
                        data-ajax-update="#divLayoutBody"
                        href="/Requerimiento/ListaRequerimiento">
-                        <i class="mdi mdi-altimeter"></i><span> Requerimiento </span>
+                        <i class="mdi mdi-altimeter"></i>
+                        <span> Requerimiento </span>
                     </a>
 
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/DetalleIndicador/ListaDetalleIndicador">
+                        <i class="mdi mdi-chart-bar"></i><span>Detalle Indicador</span>
+                    </a>
 
                 </li>
 
 
-                @*<li>
-                    <a href="javascript:void(0);" class="waves-effect">
-
-                        <i class="mdi mdi-application">
-                        </i>
-                        <span>
-                            Convenio
-                            <span class="float-right menu-arrow">
-                                <i class="mdi mdi-chevron-right"></i>
-                            </span>
-                        </span>
-                    </a>
-                    <ul class="submenu">
-                        <li>
-                            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-autorenew"></i><span> Registro<span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-
-                            <ul class="submenu">
-                                <li><a href="/pages/login">Datos del Convenio y Pestaña Presupuesto </a></li>
-                                <li><a href="/pages/register">Pagos</a></li>
-                                <li><a href="/pages/register">Mesa de Dialogo</a></li>
-                                <li><a href="/pages/register">Pestaña Observaciones</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="javascript:void(0);" class="waves-"><i class="mdi mdi-account-search"></i><span> Consulta <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                        </li>
-
-
-                    </ul>
-                </li>*@
-
-
-
-
-                <!--
-
-    <li id="left-subMenu-/Parametro" data-nombre-opcion="Parámetros" class="treeview">
-            <a class="selectItem opcionHijo" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Parametro">
-                 Parámetros
-            </a>
-        </li>
-
-
-    <li class="menu-title">Mantenimiento</li>
-
-    <li>
-        @*<a href="@Url.Action("Parametros","Configuracion")" class="waves-effect"><i class="mdi mdi-altimeter"></i><span> Parametros </span></a>*@
-
-        <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-           data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Configuracion"><i class="mdi mdi-altimeter"></i><span> Parametros </span></a>
-
-        <a href="@Url.Action("ConfiguracionEmail", "Configuracion")" class="waves-effect"><i class="mdi mdi-album"></i><span> Email </span></a>
-
-
-    </li>
-
-    <li>
-
-
-        <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-           data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Configuracion"><i class="mdi mdi-altimeter"></i><span></span></a>
-
-
-    </li> -->
                 <li class="menu-title">Mantenimiento</li>
-                <li>
+                @*<li>
                     <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type"></i><span> Sistema <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <ul class="submenu">
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Plan/ListaPlan"><i class="mdi mdi-altimeter"></i><span>Plan</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Programa/ListaPrograma"><i class="mdi mdi-altimeter"></i><span>Programa</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Componente/ListaComponente"><i class="mdi mdi-altimeter"></i><span>Componente</span></a>
-
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Proyecto/ListaProyecto"><i class="mdi mdi-cube"></i><span>Proyecto</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Actividades/ListaActividades"><i class="mdi mdi-home-variant"></i><span>Actividades</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Indicador/ListaIndicador"><i class="mdi mdi-chart-bar"></i><span>Indicador</span></a>
-                        </li>
-                        
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/DetalleIndicador/ListaDetalleIndicador"><i class="mdi mdi-chart-bar"></i><span>Detalle Indicador</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/CentrosSalud/ListaCentroDeSalud"><i class="mdi mdi-ambulance"></i><span>Centro de Salud</span></a>
-                        </li>
-
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Comunidades/ListaComunidades"><i class="mdi mdi-home-variant"></i><span>Comunidad</span></a>
-                        </li>
-                        <li>
-                            <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
-                               data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Convenio/ListaConvenio"><i class="mdi mdi-home-variant"></i><span>Convenio</span></a>
-                        </li>
-
-                    </ul>
+                    <ul class="submenu">*@
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Plan/ListaPlan"><i class="mdi mdi-altimeter"></i><span>Plan</span></a>
                 </li>
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Programa/ListaPrograma"><i class="mdi mdi-altimeter"></i><span>Programa</span></a>
+                </li>
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Componente/ListaComponente"><i class="mdi mdi-altimeter"></i><span>Componente</span></a>
+
+                </li>
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Proyecto/ListaProyecto"><i class="mdi mdi-cube"></i><span>Proyecto</span></a>
+                </li>
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Actividades/ListaActividades"><i class="mdi mdi-home-variant"></i><span>Actividad</span></a>
+                </li>
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Indicador/ListaIndicador"><i class="mdi mdi-chart-bar"></i><span>Indicador</span></a>
+                </li>
+
+
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/CentrosSalud/ListaCentroDeSalud"><i class="mdi mdi-ambulance"></i><span>Centro de Salud</span></a>
+                </li>
+
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Comunidades/ListaComunidades"><i class="mdi mdi-home-variant"></i><span>Comunidad</span></a>
+                </li>
+                <li>
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace" data-ajax-update="#divLayoutBody" href="/Convenio/ListaConvenio"><i class="mdi mdi-home-variant"></i><span>Convenio</span></a>
+                </li>
+
+                @*</ul>
+                    </li>*@
 
 
                 <li class="menu-title">Reportes</li>
 
                 <li>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-blur-off"></i><span> Indicadores <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-                    <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-brightness-7"></i><span> Comunidades <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
+
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#divLayoutBody"
+                       href="/Reporte/ReporteIndicador">
+                        <i class="mdi mdi-blur-off"></i>
+                        <span> Indicador </span>
+                    </a>
+
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#divLayoutBody"
+                       href="/Reporte/ReporteGasto">
+                        <i class="mdi mdi-blur-off"></i>
+                        <span> Gasto </span>
+                    </a>
+
+                    <a class="waves-effect" data-ajax="true" data-ajax-begin="LoadLoading();" data-ajax-complete="UnloadLoading();" data-ajax-failure="UnloadLoading();"
+                       data-ajax-mode="replace"
+                       data-ajax-update="#divLayoutBody"
+                       href="/Reporte/ReporteRequerimiento">
+                        <i class="mdi mdi-blur-off"></i>
+                        <span> Requerimiento </span>
+                    </a>
+
 
                 </li>
-
-                @*<li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-clipboard-outline"></i><span> Forms <span class="badge badge-pill badge-success float-right">6</span> </span></a>
-            <ul class="submenu">
-                <li><a href="/forms/elements">Form Elements</a></li>
-                <li><a href="/forms/validation">Form Validation</a></li>
-                <li><a href="/forms/advanced">Form Advanced</a></li>
-                <li><a href="/forms/editors">Form Editors</a></li>
-                <li><a href="/forms/uploads">Form File Upload</a></li>
-                <li><a href="/forms/xeditable">Form Xeditable</a></li>
-
-            </ul>
-        </li>
-
-        <li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-chart-line"></i><span> Charts <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-                <li><a href="/chart/morris">Morris Chart</a></li>
-                <li><a href="/chart/chartist">Chartist Chart</a></li>
-                <li><a href="/chart/chartjs">Chartjs Chart</a></li>
-                <li><a href="/chart/flot">Flot Chart</a></li>
-                <li><a href="/chart/c3">C3 Chart</a></li>
-                <li><a href="/chart/other">Jquery Knob Chart</a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-format-list-bulleted-type"></i><span> Tables <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-            <ul class="submenu">
-                <li><a href="/table/basic">Basic Tables</a></li>
-                <li><a href="/table/datatable">Data Table</a></li>
-                <li><a href="/table/responsive">Responsive Table</a></li>
-                <li><a href="/table/editable">Editable Table</a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-album"></i> <span> Icons  <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span></span> </a>
-            <ul class="submenu">
-                <li><a href="/icon/material">Material Design</a></li>
-                <li><a href="/icon/ion">Ion Icons</a></li>
-                <li><a href="/icon/fontawesome">Font Awesome</a></li>
-                <li><a href="/icon/themify">Themify Icons</a></li>
-                <li><a href="/icon/dripicons">Dripicons</a></li>
-                <li><a href="/icon/typicons">Typicons Icons</a></li>
-            </ul>
-        </li>
-
-        <li>
-            <a href="javascript:void(0);" class="waves-effect"><i class="mdi mdi-google-maps"></i><span> Maps <span class="badge badge-pill badge-danger float-right">2</span> </span></a>
-            <ul class="submenu">
-                <li><a href="/maps/google"> Google Map</a></li>
-                <li><a href="/maps/vector"> Vector Map</a></li>
-            </ul>
-        </li>*@
-
 
 
             </ul>

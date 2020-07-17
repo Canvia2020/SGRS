@@ -1,1 +1,518 @@
 ﻿
+
+
+
+<style>
+
+
+    .nav-link-01 {
+        border: 1px;
+        border-style: solid;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    .card-header {
+        background-color: #2364A6;
+        color: #ffffff;
+    }
+</style>
+
+
+
+<div class="row">
+    <div class="col-sm-12">
+        <div class="page-title-box">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Inicio</a></li>
+                <li class="breadcrumb-item"><a href="javascript:void(0);">Convenio</a></li>
+                <li class="breadcrumb-item active">Nuevo</li>
+            </ol>
+        </div>
+    </div>
+</div>
+
+
+<div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+
+                <h4 class="card-title">Nuevo Convenio</h4>
+
+                <button class="btn btn-danger mb-3" id="btnRegresar">Regresar</button>
+
+
+                <!-- fila 3-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Programa</label>
+                            <select class="form-control">
+                                <option>Seleccionar</option>
+                                <option>Relaciones Comunitarias</option>
+                                <option>Comunicación Externa </option>
+                                <option>Comunicación Interna</option>
+                                <option>Extensión Cultural y Científica</option>
+                                <option>Solidaridad Social</option>
+                                <option>Donaciones</option>
+                                <option>Sinergias</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Componente</label>
+                            <select class="form-control">
+                                <option>Seleccionar</option>
+                                <option>EDUCACIÓN</option>
+                                <option>SALUD</option>
+                                <option>ECONOMÍA</option>
+                                <option>MEDIO AMBIENTE</option>
+                                <option>ECONOMÍA</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <!-- fila 4-->
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Proyecto</label>
+                            <select class="form-control">
+                                <option>Seleccionar</option>
+                                <option>Proyecto 01 </option>
+                                <option>Proyecto 02 </option>
+                                <option>Proyecto 03 </option>n>
+
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label>Requerimientos</label>
+                            <select class="form-control">
+                                <option>Seleccionar</option>
+                                <option>Requerimiento 01 </option>
+                                <option>Requerimiento 02 </option>
+                                <option>Requerimiento 03 </option>
+
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label>Descripción</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Nº personas beneficiadas</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label>Nº Adendas</label>
+                            <input type="text" class="form-control">
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card m-b-20">
+                        <div class="card-body">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-pills nav-justified" role="tablist">
+                                <li class="nav-item waves-effect waves-light">
+                                    <a class="nav-link-01 nav-link active" data-toggle="tab" href="#tabComunidades" role="tab">Pagos</a>
+                                </li>
+                                <li class="nav-item waves-effect waves-light">
+                                    <a class="nav-link-01 nav-link" data-toggle="tab" href="#tabInstituciones" role="tab">Institución</a>
+                                </li>
+                                <li class="nav-item waves-effect waves-light">
+                                    <a class="nav-link-01 nav-link" data-toggle="tab" href="#tabRepresentante" role="tab">Representante</a>
+                                </li>
+                                <li class="nav-item waves-effect waves-light">
+                                    <a class="nav-link-01 nav-link" data-toggle="tab" href="#tabCentroSalud" role="tab">Centro de Salud</a>
+                                </li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <!-- Tab Comunidades -->
+                                <div class="tab-pane active p-3" id="tabComunidades" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-10">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Pagos</label>
+                                                <div class="col-sm-4">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" id="txtPago" name="txtPago">
+
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="input-group">
+                                                        <input type="text" class="form-control" placeholder="dd/mm/yyyy" id="txtInicio" name="txtInicio">
+                                                        <div class="input-group-append">
+                                                            <span class="input-group-text"><i class="mdi mdi-calendar"></i></span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="btn btn-primary">Agregar</button>
+                                            </div>
+
+                                            <div class="row">
+                                                <table id="datatable" class="table table-bordered dt-responsive">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Id</th>
+                                                            <th>Descripción</th>
+                                                            <th>Pago</th>
+                                                            <th>Fecha</th>
+
+                                                            <th>Acciones</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        <tr role="row" class="odd">
+                                                            <td>01</td>
+                                                            <th>Descripción</th>
+                                                            <th>Pago</th>
+                                                            <th>Fecha</th>
+
+                                                            <td>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td>02</td>
+                                                            <th>Descripción</th>
+                                                            <th>Pago</th>
+                                                            <th>Fecha</th>
+
+                                                            <td>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <!-- Tab Instituciones -->
+                                <div class="tab-pane p-3" id="tabInstituciones" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-2 col-form-label">Institución</label>
+                                                <div class="col-sm-8">
+                                                    <input class="form-control" type="text" value="" id="txtInstitucion">
+                                                    @*<select class="form-control">
+                                                            <option>Seleccionar</option>
+                                                            <option>RELACIONES COMUNITARIAS</option>
+                                                            <option>COMUNICACIÓN EXTERNA</option>
+                                                            <option>COMUNICACIÓN INTERNA</option>
+                                                            <option>EXTENSIÓN CULTURAL Y CIENTÍFICA </option>
+                                                            <option>SOLIDARIDAD SOCIAL</option>
+                                                            <option>DONACIONES</option>
+                                                            <option>SINERGIAS</option>
+
+                                                        </select>*@
+                                                </div>
+
+                                                <button type="button" class="btn btn-primary">Agregar</button>
+                                            </div>
+
+                                            <div class="row">
+                                                <table id="datatable" class="table table-bordered dt-responsive">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Id</th>
+                                                            <th>Institución</th>
+                                                            <th>Acciones</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        <tr role="row" class="odd">
+                                                            <td class="dtr-control sorting_1" tabindex="0">01</td>
+                                                            <td>RELACIONES COMUNITARIAS</td>
+
+                                                            <td>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                            </td>
+                                                        </tr>
+                                                        <tr role="row" class="even">
+                                                            <td class="sorting_1 dtr-control">02</td>
+                                                            <td>SINERGIAS</td>
+
+                                                            <td>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                            </td>
+
+                                                        </tr>
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                                <!-- Tab Representante -->
+                                <div class="tab-pane p-3" id="tabRepresentante" role="tabpanel">
+                                    <div class="row">
+                                        <div class="col-md-6">
+
+                                            <div class="form-group row">
+                                                <label class="col-sm-3 col-form-label">Representante</label>
+                                                <div class="col-sm-7">
+                                                    <input class="form-control" type="text" value="" id="txtRepresentante">
+                                                    @*<select class="form-control">
+                                                            <option>Seleccionar</option>
+                                                            <option>Luis Cano</option>
+                                                            <option>COMUNICACIÓN EXTERNA</option>
+                                                            <option>COMUNICACIÓN INTERNA</option>
+                                                            <option>EXTENSIÓN CULTURAL Y CIENTÍFICA </option>
+                                                            <option>SOLIDARIDAD SOCIAL</option>
+                                                            <option>DONACIONES</option>
+                                                            <option>SINERGIAS</option>
+
+                                                        </select>*@
+                                                </div>
+
+                                                <button type="button" class="btn btn-primary">Agregar</button>
+
+                                            </div>
+
+                                            <div class="row">
+                                                <table id="datatable" class="table table-bordered dt-responsive">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Id</th>
+                                                            <th>Representante</th>
+                                                            <th>Acciones</th>
+                                                        </tr>
+                                                    </thead>
+
+                                                    <tbody>
+
+                                                        <tr role="row" class="odd">
+                                                            <td class="dtr-control sorting_1" tabindex="0">01</td>
+                                                            <td>Luis Cano Martinez</td>
+
+                                                            <td>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                            </td>
+                                                        </tr>
+
+
+                                                    </tbody>
+                                                </table>
+                                            </div>
+
+
+                                        </div>
+
+                                    </div>
+                                </div>
+                            
+                                
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- bloque 2-->
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="card m-b-30">
+                        <h4 class="card-header font-16 mt-0">Agregar Documentos</h4>
+                        <div class="card-body">
+
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label>Nombre del Archivo</label>
+                                        <input class="form-control" type="text" value="" id="txtActas">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+
+
+                                <div class="col-md-6">
+
+
+                                    <div class="form-group row">
+                                        <div class="col-md-8">
+                                            <input type="file" class="filestyle" data-buttonname="btn-secondary" data-buttonText="Cargar Archivo" data-iconName="fas fa-folder-open">
+                                        </div>
+
+                                        <div class="col-md-4">
+                                            <button type="button" class="btn btn-primary">Agregar</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row">
+                                        <table id="datatable" class="table table-bordered dt-responsive">
+                                            <thead>
+                                                <tr>
+                                                    <th>Id</th>
+                                                    <th>Nombre del Acta</th>
+                                                    <th>Fecha</th>
+                                                    <th>Archivo</th>
+                                                    <th>Acciones</th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+
+                                                <tr role="row" class="odd">
+                                                    <td class="dtr-control sorting_1" tabindex="0">01</td>
+                                                    <td>acta de registro</td>
+                                                    <td>12/06/2020</td>
+                                                    <td>acta.doc</td>
+                                                    <td>
+                                                        <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                        <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                    </td>
+                                                </tr>
+                                                <tr role="row" class="even">
+                                                    <td class="sorting_1 dtr-control">02</td>
+                                                    <td>acta de gasto</td>
+                                                    <td>02/07/2020</td>
+                                                    <td>actadegasto.doc</td>
+
+                                                    <td>
+                                                        <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                                        <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                                                    </td>
+
+                                                </tr>
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <button class="btn btn-primary" id="btnGuardar">Guardar</button>
+                </div>
+            </div>
+
+
+
+        </div>
+    </div>
+</div>
+<!-- end col -->
+
+
+<script src="~/plugins/bootstrap-filestyle/js/bootstrap-filestyle.js"></script>
+
+<script>
+
+    $('#btnRegresar').click(function () {
+
+        alert('regreso');
+        $.ajax({
+            url: "/Convenio/ListaConvenio",
+            dataType: "html",
+            success: function (html) {
+                $("#divLayoutBody").html(html);
+
+            }
+        });
+    });
+    $(document).ready(function () {
+
+
+        var options = {
+            format: 'dd/mm/yyyy',
+            todayHighlight: true,
+            autoclose: true,
+            language: 'es'
+        };
+
+        $('#txtInicio').datepicker(options);
+
+
+        $("#datatable").DataTable({
+            "columnDefs": [
+                { "width": "50%", "targets": 3 }
+            ],
+            "language": {
+                "paginate": {
+                    "previous": "anterior",
+                    "next": "posterior"
+                },
+                "search": "Buscar:",
+
+
+            },
+            "search": "Buscar:",
+            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]],
+            "paging": false,
+            "ordering": false,
+            "info": false,
+            "searching": false
+
+        });
+
+
+        //$(":file").filestyle({
+        //    'text': 'Cargar Archivo'
+        //});
+    });
+
+
+</script>

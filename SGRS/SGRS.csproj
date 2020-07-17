@@ -150,6 +150,7 @@
     <Compile Include="Controllers\PlanController.cs" />
     <Compile Include="Controllers\ProgramaController.cs" />
     <Compile Include="Controllers\ProyectoController.cs" />
+    <Compile Include="Controllers\ReporteController.cs" />
     <Compile Include="Controllers\RequerimientoController.cs" />
     <Compile Include="Controllers\SeguridadController.cs" />
     <Compile Include="Global.asax.cs">
@@ -1332,6 +1333,7 @@
     <Content Include="images\default-avatar.jpg" />
     <Content Include="images\fondoInicio.jpg" />
     <Content Include="images\LogoElectroPeru.png" />
+    <Content Include="Js\DataTableSGRS.js" />
     <Content Include="plugins\grillaSelect\dataTables.checkboxes.css" />
     <Content Include="plugins\grillaSelect\dataTables.checkboxes.min.js" />
     <Content Include="Scripts\jQuery-2.1.4.min.js" />
@@ -2119,6 +2121,9 @@
     <Content Include="Views\Plan\NuevoPlan.cshtml" />
     <Content Include="Views\DetalleIndicador\ListaDetalleIndicador.cshtml" />
     <Content Include="Views\DetalleIndicador\NuevoDetalleIndicador.cshtml" />
+    <Content Include="Views\Reporte\ReporteIndicador.cshtml" />
+    <Content Include="Views\Reporte\ReporteGasto.cshtml" />
+    <Content Include="Views\Reporte\ReporteRequerimiento.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

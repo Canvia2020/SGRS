@@ -29,6 +29,7 @@
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Plan</th>
                             <th>Programa</th>
                             <th>Componente</th>
                             <th>Proyecto</th>
@@ -41,7 +42,8 @@
                     <tbody>
 
                         <tr role="row" class="odd">
-                            <td class="dtr-control sorting_1" tabindex="0">01</td>
+                            <td>01</td>
+                            <td>Plan anual 2020</td>
                             <td>RELACIONES COMUNITARIAS</td>
                             <td>EDUCACIÓN</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -54,7 +56,8 @@
                             </td>
                         </tr>
                         <tr role="row" class="even">
-                            <td class="sorting_1 dtr-control">02</td>
+                            <td>02</td>
+                            <td>Plan anual 2020</td>
                             <td>SINERGIAS</td>
                             <td>London</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -68,7 +71,8 @@
 
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="dtr-control sorting_1" tabindex="0">03</td>
+                            <td>03</td>
+                            <td>Plan anual 2020</td>
                             <td>RELACIONES COMUNITARIAS</td>
                             <td>SALUD</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -81,7 +85,8 @@
                             </td>
                         </tr>
                         <tr role="row" class="even">
-                            <td class="sorting_1 dtr-control">04</td>
+                            <td>04</td>
+                            <td>Plan anual 2020</td>
                             <td>SOLIDARIDAD SOCIAL</td>
                             <td>London</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -94,7 +99,8 @@
                             </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="sorting_1 dtr-control">05</td>
+                            <td>05</td>
+                            <td>Plan anual 2020</td>
                             <td>SOLIDARIDAD SOCIAL</td>
                             <td>CAMPAÑA POR NAVIDAD</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -107,7 +113,8 @@
                             </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="sorting_1 dtr-control">06</td>
+                            <td>06</td>
+                            <td>Plan anual 2020</td>
                             <td>COMUNICACIÓN INTERNA</td>
                             <td>San Francisco</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -119,7 +126,8 @@
                                 <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
                             </td>
                         <tr role="row" class="odd">
-                            <td class="sorting_1 dtr-control">07</td>
+                            <td>07</td>
+                            <td>Plan anual 2020</td>
                             <td>Software Engineer</td>
                             <td>San Francisco</td>
                             <td>NOMBRE DEL PROYECTO</td>
@@ -146,28 +154,28 @@
 <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 
-
+<script src="~/Js/DataTableSGRS.js"></script>
 <script>
     $(document).ready(function () {
 
 
-        $("#datatable").DataTable({
-            "columnDefs": [
-                { "width": "50%", "targets": 4 }
-            ],
-            "language": {
-                "paginate": {
-                    "previous": "anterior",
-                    "next": "posterior"
-                },
-                "search": "Buscar:",
+        //$("#datatable").DataTable({
+        //    "columnDefs": [
+        //        { "width": "50%", "targets": 4 }
+        //    ],
+        //    "language": {
+        //        "paginate": {
+        //            "previous": "anterior",
+        //            "next": "posterior"
+        //        },
+        //        "search": "Buscar:",
 
 
-            },
-            "search": "Buscar:",
-            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
+        //    },
+        //    "search": "Buscar:",
+        //    "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
 
-        });
+        //});
 
         $('#btnNuevoProyecto').click(function () {
 

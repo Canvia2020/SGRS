@@ -16,6 +16,7 @@
         </div>
     </div>
 </div>
+
 <div class="row">
     <div class="col-12">
         <div class="card">
@@ -23,8 +24,113 @@
 
                 <h4 class="card-title">Lista de Centros de Salud</h4>
                 <p class="card-title-desc">
-                    <button class="btn btn-primary" id="btnNuevoCentroDeSalud">Nuevo</button>
+                    <button class="btn btn-primary" id="btnNuevoProyecto">Nuevo</button>
                 </p>
+
+
+                <table id="datatable" class="table table-bordered dt-responsive">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Centro de salud</th>
+                            <th>Categoria</th>
+                            <th>Población Estimada</th>
+                            <th>Cantidad de Personal</th>
+                            <th>Activo</th>
+
+                            <th>Acción</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr role="row" class="odd">
+                            <td>01</td>
+                            <td>Centro de salud</td>
+                            <td>Categoria</td>
+                            <td>Población Estimada</td>
+                            <td>Cantidad de Personal</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>02</td>
+                            <td>Centro de salud</td>
+                            <td>Categoria</td>
+                            <td>Población Estimada</td>
+                            <td>Cantidad de Personal</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>03</td>
+                            <td>Centro de salud</td>
+                            <td>Categoria</td>
+                            <td>Población Estimada</td>
+                            <td>Cantidad de Personal</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="even">
+                            <td>04</td>
+                            <td>Centro de salud</td>
+                            <td>Categoria</td>
+                            <td>Población Estimada</td>
+                            <td>Cantidad de Personal</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>05</td>
+                            <td>Centro de salud</td>
+                            <td>Categoria</td>
+                            <td>Población Estimada</td>
+                            <td>Cantidad de Personal</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                        <tr role="row" class="odd">
+                            <td>06</td>
+                        <td>Centro de salud</td>
+                        <td>Categoria</td>
+                        <td>Población Estimada</td>
+                        <td>Cantidad de Personal</td>
+                        <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        <tr role="row" class="odd">
+                            <td>07</td>
+                            <td>Centro de salud</td>
+                            <td>Categoria</td>
+                            <td>Población Estimada</td>
+                            <td>Cantidad de Personal</td>
+                            <td>Activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
 
             </div>
         </div>
@@ -37,25 +143,18 @@
 <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 
-
+<script src="~/Js/DataTableSGRS.js"></script>
 <script>
     $(document).ready(function () {
 
-        $('#btnNuevoCentroDeSalud').click(function () {
 
-            $.ajax({
-                url: "/CentrosSalud/NuevoCentroDeSalud",
-                dataType: "html",
-                success: function(html) {
-                    $("#divLayoutBody").html(html);
-             
-                }
+        $('#btnNuevoProyecto').click(function () {
+
+            $.post('/Proyecto/NuevoProyecto', { estado: '0' }, function (response) {
+
+                $("#divLayoutBody").html(response);
             });
-
         });
-
-       
-
 
     });
 

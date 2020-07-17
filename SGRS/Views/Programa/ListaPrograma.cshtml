@@ -24,67 +24,96 @@
                 </p>
 
 
-                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <table id="datatable" class="table table-bordered dt-responsive">
                     <thead>
                         <tr>
                             <th>Id</th>
+                            <th>Plan</th>
                             <th>Programa</th>
                             <th>Descripción</th>
                             <th>Estado</th>
-
+                            <th>Acciones</th>
                         </tr>
                     </thead>
 
                     <tbody>
 
                         <tr role="row" class="odd">
-                            <td class="dtr-control sorting_1" tabindex="0">Airi Satou</td>
-                            <td>Accountant</td>
-                            <td>Tokyo</td>
-                            <td>33</td>
-
+                            <td class="" >01</td>
+                            <td>Plan 2020</td>
+                            <td>Plan 2020</td>
+                            <td>Programa 01</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="even">
-                            <td class="sorting_1 dtr-control">Angelica Ramos</td>
-                            <td>Chief Executive Officer (CEO)</td>
-                            <td>London</td>
-                            <td>47</td>
-
+                            <td class="">02</td>
+                            <td>Plan 2020</td>
+                            <td>Programa 02</td>
+                            <td>Descripción 02</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="dtr-control sorting_1" tabindex="0">Ashton Cox</td>
-                            <td>Junior Technical Author</td>
-                            <td>San Francisco</td>
-                            <td>66</td>
-
+                            <td class="" tabindex="0">03</td>
+                            <td>Plan 2019</td>
+                            <td>Programa 02</td>
+                            <td>Descripción 02</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="even">
-                            <td class="sorting_1 dtr-control">Bradley Greer</td>
-                            <td>Software Engineer</td>
-                            <td>London</td>
-                            <td>41</td>
-
+                            <td class="">04</td>
+                            <td>Plan 2019</td>
+                            <td>Programa 01</td>
+                            <td>Descripción 01</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="sorting_1 dtr-control">Brenden Wagner</td>
-                            <td>Software Engineer</td>
-                            <td>San Francisco</td>
-                            <td>28</td>
-
+                            <td class="">05</td>
+                            <td>Plan 2019</td>
+                            <td>Programa 02</td>
+                            <td>Descripción 02</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="sorting_1 dtr-control">Brenden Wagner</td>
-                            <td>Software Engineer</td>
-                            <td>San Francisco</td>
-                            <td>28</td>
-
+                            <td class="">06</td>
+                            <td>Plan 2019</td>
+                            <td>Programa 03</td>
+                            <td>Descripción 03</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="odd">
-                            <td class="sorting_1 dtr-control">Brenden Wagner</td>
-                            <td>Software Engineer</td>
-                            <td>San Francisco</td>
-                            <td>28</td>
-
+                            <td class="">07</td>
+                            <td>Plan 2019</td>
+                            <td>Programa 04</td>
+                            <td>Descripción 04</td>
+                            <td>activo</td>
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -101,24 +130,11 @@
 <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 
-
+<script src="~/Js/DataTableSGRS.js"></script>
 <script>
     $(document).ready(function () {
 
-        $("#datatable").DataTable({
-            "language": {
-                "paginate": {
-                    "previous": "anterior",
-                    "next": "posterior"
-                },
-                "search": "Buscar:",
-
-
-            },
-            "search": "Buscar:",
-            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
-
-        });
+      
 
         $('#btnNuevoPrograma').click(function () {
           

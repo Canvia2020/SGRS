@@ -25,14 +25,15 @@
                 </p>
 
 
-                <table id="datatable" class="table table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                <table id="datatable" class="table table-bordered dt-responsive">
                     <thead>
                         <tr>
                             <th>Id</th>
-                            <th>Plan</th>  
-                            <th>Fecha Inicio</th>   
-                            <th>Fecha Fin</th>   
+                            <th>Plan</th>
+                            <th>Fecha Inicio</th>
+                            <th>Fecha Fin</th>
                             <th>Estado</th>
+                            <th>Acciones</th>
                         </tr>
                     </thead>
 
@@ -44,7 +45,10 @@
                             <td>12/01/2020</td>
                             <td>28/12/2020</td>
                             <td>activo</td>
-
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="even">
                             <td class="dtr-control sorting_1" tabindex="0">02</td>
@@ -52,7 +56,10 @@
                             <td>02/01/2019</td>
                             <td>12/12/2019</td>
                             <td>activo</td>
-
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
                         <tr role="row" class="odd">
                             <td class="dtr-control sorting_1" tabindex="0">03</td>
@@ -60,9 +67,12 @@
                             <td>02/01/2018</td>
                             <td>17/12/2018</td>
                             <td>activo</td>
-
+                            <td>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-info"><i class="far fa-edit"></i> </button>
+                                <button type="button" class="mb-xs mt-xs mr-xs btn btn-danger"><i class="fas fa-trash-alt"></i> </button>
+                            </td>
                         </tr>
-                        
+
                     </tbody>
                 </table>
 
@@ -78,34 +88,19 @@
 <script src="~/plugins/datatables/jquery.dataTables.min.js"></script>
 <script src="~/plugins/datatables/dataTables.bootstrap4.min.js"></script>
 
-
+<script src="~/Js/DataTableSGRS.js"></script>
 <script>
     $(document).ready(function () {
 
-        $("#datatable").DataTable({
-            "language": {
-                "paginate": {
-                    "previous": "anterior",
-                    "next": "posterior"
-                },
-                "search": "Buscar:",
-
-
-            },
-            "search": "Buscar:",
-            "lengthMenu": [[5, 10, 25, -1], [5, 10, 25, "All"]]
-
-        });
-
+    
         $('#btnNuevoPlan').click(function () {
 
-                
             $.ajax({
                 url: "/Plan/NuevoPlan",
                 dataType: "html",
-                success: function(html) {
+                success: function (html) {
                     $("#divLayoutBody").html(html);
-             
+
                 }
             });
 
